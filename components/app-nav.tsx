@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const LINKS = [
  { href: "/", label: "Inicio" },
@@ -16,12 +16,8 @@ export function AppNav() {
  const pathname = usePathname();
  const [mobileOpen, setMobileOpen] = useState(false);
 
- useEffect(() => {
-  setMobileOpen(false);
- }, [pathname]);
-
  return (
- <div className="relative">
+ <div key={pathname} className="relative">
   <nav className="hidden md:flex flex-wrap items-center gap-2 p-1.5 bg-[var(--panel-soft)] border border-[var(--stroke)] shadow-sm" aria-label="Navegacion principal">
    {LINKS.map((link) => {
     const active = pathname === link.href || (link.href !== "/" && pathname.startsWith(`${link.href}`));
@@ -65,6 +61,7 @@ export function AppNav() {
        <Link
         key={`mobile-${link.href}`}
         href={link.href}
+        onClick={() => setMobileOpen(false)}
         aria-current={active ? "page" : undefined}
         className={`block px-4 py-3 text-sm font-semibold transition-colors ${active ? "bg-[#171717] text-white" : "text-[#171717] hover:bg-[var(--panel-soft)]"
          }`}

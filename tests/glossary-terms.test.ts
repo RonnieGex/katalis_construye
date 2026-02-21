@@ -14,7 +14,7 @@ describe("glossary labels", () => {
 
   it("expands acronyms in labels", () => {
     const expanded = expandGlossaryLabel("ROI y EBITDA");
-    expect(expanded).toContain("ROI (Retorno sobre inversion)");
+    expect(expanded).toContain("ROI (Retorno sobre inversión)");
     expect(expanded).toContain("EBITDA (Flujo operativo)");
   });
 

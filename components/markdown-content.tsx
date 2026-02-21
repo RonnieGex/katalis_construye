@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
@@ -36,7 +37,6 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
                         }
 
                         // absolute URL or data URI → render as <img>
-                        // eslint-disable-next-line @next/next/no-img-element
                         return (
                             <img
                                 src={rawSrc}

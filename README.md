@@ -118,7 +118,7 @@ sequenceDiagram
 ```
 
 - Main storage: IndexedDB (Dexie)
-- Currency display mode: base or USD
+- Monetary display: base currency only (single-currency UX)
 - Sample-data lifecycle per tool (`sample`, `user`, dismissed/consumed states)
 - Versioned backup/import with migration support (`CURRENT_SCHEMA_VERSION = 4`)
 
@@ -145,6 +145,20 @@ npm test
 npm run lint
 npm run build
 ```
+
+## Cloudflare Deployment (OpenNext)
+
+This project is configured for Cloudflare Workers using the OpenNext adapter.
+
+```bash
+npm run build:worker
+npm run preview:worker
+npm run deploy:worker
+```
+
+- Worker config: `wrangler.toml`
+- Worker entry: `.open-next/worker.js`
+- Static assets: `.open-next/assets`
 
 ## Notes
 
