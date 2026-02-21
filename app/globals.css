@@ -1,26 +1,225 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #FFFFFF;
   --foreground: #171717;
+  --panel: #FAFAF9;
+  --panel-soft: #F5F5F5;
+  --panel-light: #F9F9F9;
+  --stroke: rgba(0, 0, 0, 0.08);
+  --muted: rgba(0, 0, 0, 0.4);
+  --primary: #171717;
+  --secondary: #404040;
+  --success: #171717;
+  --danger: #ef4444;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: var(--primary);
+  --color-deep-black: #000000;
+  --color-surface-dark: #1C1917;
+  --font-sans: var(--font-lufga), sans-serif;
+  --font-mono: var(--font-lufga), sans-serif;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+  --radius-squircle: 0px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  min-height: 100%;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+/* Base custom classes to replicate Neon Bento look */
+.squircle {
+  border-radius: 0px !important;
+}
+
+.hover-lift {
+  transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 400ms cubic-bezier(0.16, 1, 0.3, 1), background-color 400ms ease, color 400ms ease, border-color 400ms ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+}
+
+.panel {
+  border: 1px solid var(--stroke);
+  border-radius: 0px;
+  background: var(--panel);
+  color: var(--foreground);
+}
+
+.panel-soft {
+  border: 1px solid var(--stroke);
+  border-radius: 0px;
+  background: var(--panel-soft);
+  color: var(--foreground);
+}
+
+.panel-light {
+  border: 1px solid var(--stroke);
+  border-radius: 0px;
+  background: var(--panel-light);
+  color: #171717;
+}
+
+.section-title {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.metric-value {
+  font-family: var(--font-sans);
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  color: white;
+  line-height: 1;
+}
+
+.input-base {
+  width: 100%;
+  border: 1px solid var(--stroke);
+  border-radius: 0px;
+  background: #FFFFFF;
+  padding: 1rem 1.25rem;
+  color: var(--foreground);
+  transition: border-color 400ms ease, box-shadow 400ms ease;
+}
+
+.input-base::placeholder {
+  color: var(--muted);
+}
+
+.input-base:focus-visible {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(23, 23, 23, 0.1);
+}
+
+.btn-primary {
+  border-radius: 0px;
+  background: var(--primary);
+  color: #ffffff;
+  padding: 0.75rem 1.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1), opacity 400ms ease, box-shadow 400ms ease;
+}
+
+.btn-primary:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+.btn-secondary {
+  border-radius: 0px;
+  border: 1px solid var(--stroke);
+  background: #FFFFFF;
+  color: var(--foreground);
+  padding: 0.75rem 1.75rem;
+  font-weight: 700;
+  transition: background-color 400ms ease, border-color 400ms ease, transform 400ms ease;
+}
+
+.btn-secondary:hover {
+  background: var(--panel-soft);
+  border-color: rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+.btn-secondary:active {
+  transform: translateY(1px);
+}
+
+.chip-nav {
+  border-radius: 0px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #171717;
+  font-weight: 600;
+  transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.chip-nav:hover {
+  transform: translateY(-1px);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.chip-nav.active {
+  background: #171717;
+  color: white;
+  border-color: transparent;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+a[href],
+button,
+summary,
+[role="button"] {
+  cursor: pointer;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Recharts overrides for light theme */
+.recharts-cartesian-axis-tick-value {
+  fill: rgba(0, 0, 0, 0.5);
+}
+
+.recharts-legend-item-text {
+  color: rgba(0, 0, 0, 0.7) !important;
+}
+
+.recharts-default-tooltip {
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  background-color: #FFFFFF !important;
+  border-radius: var(--radius-squircle) !important;
+  color: var(--foreground) !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.2);
+  padding: 1rem !important;
+}
+
+.recharts-tooltip-item-name,
+.recharts-tooltip-item-value {
+  color: var(--foreground) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

@@ -1,65 +1,124 @@
-import Image from "next/image";
+import Link from "next/link";
+import { BrandLogo } from "@/components/brand-logo";
+
+const STEPS = [
+  {
+    title: "Parte de cero, sin excusas",
+    description:
+      "Define tu moneda, tu modelo y tus parámetros en minutos. Sin plantillas vacías, sin tecnicismos innecesarios.",
+  },
+  {
+    title: "Avanza con dirección",
+    description:
+      "Una ruta clara te dice qué aprender primero y por qué. Cada etapa desbloquea la siguiente.",
+  },
+  {
+    title: "Toma decisiones reales",
+    description:
+      "Herramientas que funcionan con tus números. No simulaciones: tu caja, tu margen, tu equilibrio.",
+  },
+];
+
+const TOOLS = [
+  "Flujo de caja",
+  "Costos vs Gastos",
+  "Presupuesto anual",
+  "Punto de equilibrio",
+  "Dashboard KPI",
+];
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="space-y-12 pb-16">
+      <section className="py-12 md:py-24">
+        <div className="mx-auto max-w-4xl text-left">
+          <div className="inline-flex items-center gap-3">
+            <BrandLogo size={44} className="h-11 w-11 object-cover" priority />
+            <p className="text-sm font-bold uppercase tracking-widest text-[#171717] opacity-60">
+              Katalis Construye
+            </p>
+          </div>
+          <h1 className="section-title mt-4 text-5xl leading-[0.95] text-[var(--foreground)] md:text-7xl lg:text-[5.5rem]">
+            Finanzas que se entienden. Decisiones que se toman.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="mt-8 max-w-2xl text-lg font-medium leading-relaxed text-[#171717]">
+            Un libro interactivo que no te deja atorado en teoría. Aprendes con
+            una ruta que tiene sentido, aplicas de inmediato y ves el impacto en
+            tu negocio esta semana, no en seis meses.
+          </p>
+          <div className="mt-10 flex flex-wrap items-center gap-4">
+            <Link href="/onboarding" className="btn-primary px-8 py-4 text-xl">
+              Empezar ahora
+            </Link>
+            <Link href="/learn" className="btn-secondary px-8 py-4 text-xl">
+              Ver la ruta
+            </Link>
+          </div>
+          <div className="mt-8">
+            <span className="inline-flex items-center gap-2 bg-[#171717] px-4 py-2 text-sm font-bold text-white">
+              <span className="material-symbols-outlined text-sm">lock</span>
+              Sin nube obligatoria. Tus datos, tu máquina.
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <section className="panel-soft mt-8 p-8 md:p-12">
+        <div className="max-w-3xl space-y-4">
+          <h2 className="section-title text-4xl text-[var(--foreground)]">Katalis Construye</h2>
+          <p className="text-lg leading-relaxed text-[var(--foreground)]/80">
+            No es un curso. No es un manual. Es una plataforma que te acompaña
+            mientras administras tu negocio real. Cada herramienta conecta con
+            lo que aprendes. Cada lectura tiene aplicación inmediata.
+          </p>
+          <p className="text-base leading-relaxed text-[var(--foreground)]/70">
+            Hecha para fundadores, directores y dueños de empresa que necesitan
+            criterio, no solo datos. Que quieren entender lo que miran, no solo
+            reportarlo.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section className="grid gap-6 md:grid-cols-3">
+        {STEPS.map((step, index) => {
+          const isDark = index % 2 !== 0;
+          return (
+            <article
+              key={step.title}
+              className={`hover-lift flex min-h-[320px] flex-col justify-between border border-neutral-200 p-8 transition-all duration-400 ease-out lg:p-10 ${isDark ? "bg-[#171717] text-white" : "bg-white text-[#171717]"
+                }`}
+            >
+              <p className="text-5xl font-bold opacity-30">{String(index + 1).padStart(2, "0")}</p>
+              <div className="mt-12">
+                <h3 className="mb-4 text-3xl font-bold leading-tight tracking-tighter">{step.title}</h3>
+                <p className={`text-base font-medium leading-relaxed ${isDark ? "text-white/60" : "text-black/60"}`}>
+                  {step.description}
+                </p>
+              </div>
+            </article>
+          );
+        })}
+      </section>
+
+      <section className="panel-soft hover-lift mt-12 p-8 md:p-12">
+        <div className="mb-8 max-w-2xl">
+          <h2 className="section-title text-4xl text-[var(--foreground)]">Herramientas incluidas</h2>
+          <p className="mt-4 text-lg font-medium text-[var(--foreground)]/60">
+            Cada una arranca con un ejemplo listo. Editas, ajustas y ya es tuya.
+          </p>
         </div>
-      </main>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {TOOLS.map((tool) => (
+            <div
+              key={tool}
+              className="group cursor-pointer border border-[var(--stroke)] bg-white px-6 py-4 text-center text-lg font-bold text-[#171717] shadow-sm transition-all hover-lift hover:bg-[#171717] hover:text-white"
+            >
+              {tool}
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
+

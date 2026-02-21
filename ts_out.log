@@ -1,0 +1,51 @@
+﻿app/tools/business-model-analyzer/page.tsx(16,23): error TS2344: Type 'BusinessModelAnalyzerModel' does not satisfy the constraint 'GenericModel'.
+  Type 'BusinessModelAnalyzerModel' is not assignable to type 'Record<string, unknown>'.
+    Index signature for type 'string' is missing in type 'BusinessModelAnalyzerModel'.
+app/tools/contingency-planner/page.tsx(17,23): error TS2344: Type 'ContingencyModel' does not satisfy the constraint 'GenericModel'.
+  Type 'ContingencyModel' is not assignable to type 'Record<string, unknown>'.
+    Index signature for type 'string' is missing in type 'ContingencyModel'.
+app/tools/debt-manager/page.tsx(17,23): error TS2344: Type 'DebtManagerModel' does not satisfy the constraint 'GenericModel'.
+  Type 'DebtManagerModel' is not assignable to type 'Record<string, unknown>'.
+    Index signature for type 'string' is missing in type 'DebtManagerModel'.
+app/tools/financial-education-kit/page.tsx(17,23): error TS2344: Type 'FinancialEducationModel' does not satisfy the constraint 'GenericModel'.
+  Type 'FinancialEducationModel' is not assignable to type 'Record<string, unknown>'.
+    Index signature for type 'string' is missing in type 'FinancialEducationModel'.
+app/tools/financial-strategy-planner/page.tsx(13,23): error TS2344: Type 'FinancialStrategyModel' does not satisfy the constraint 'GenericModel'.
+  Type 'FinancialStrategyModel' is not assignable to type 'Record<string, unknown>'.
+    Index signature for type 'string' is missing in type 'FinancialStrategyModel'.
+app/tools/financing-options/page.tsx(13,23): error TS2344: Type 'FinancingOptionsModel' does not satisfy the constraint 'GenericModel'.
+  Type 'FinancingOptionsModel' is not assignable to type 'Record<string, unknown>'.
+    Index signature for type 'string' is missing in type 'FinancingOptionsModel'.
+app/tools/fintech-evaluator/page.tsx(12,23): error TS2344: Type 'FintechEvaluatorModel' does not satisfy the constraint 'GenericModel'.
+  Type 'FintechEvaluatorModel' is not assignable to type 'Record<string, unknown>'.
+    Index signature for type 'string' is missing in type 'FintechEvaluatorModel'.
+app/tools/international-finance-manager/page.tsx(13,23): error TS2344: Type 'InternationalFinanceModel' does not satisfy the constraint 'GenericModel'.
+  Type 'InternationalFinanceModel' is not assignable to type 'Record<string, unknown>'.
+    Index signature for type 'string' is missing in type 'InternationalFinanceModel'.
+app/tools/investment-evaluator/page.tsx(17,23): error TS2344: Type 'InvestmentEvaluatorModel' does not satisfy the constraint 'GenericModel'.
+  Type 'InvestmentEvaluatorModel' is not assignable to type 'Record<string, unknown>'.
+    Index signature for type 'string' is missing in type 'InvestmentEvaluatorModel'.
+app/tools/profitability-analyzer/page.tsx(17,23): error TS2344: Type 'ProfitabilityModel' does not satisfy the constraint 'GenericModel'.
+  Type 'ProfitabilityModel' is not assignable to type 'Record<string, unknown>'.
+    Index signature for type 'string' is missing in type 'ProfitabilityModel'.
+app/tools/resilience-evaluator/page.tsx(17,23): error TS2344: Type 'ResilienceModel' does not satisfy the constraint 'GenericModel'.
+  Type 'ResilienceModel' is not assignable to type 'Record<string, unknown>'.
+    Index signature for type 'string' is missing in type 'ResilienceModel'.
+app/tools/unit-economics/page.tsx(17,23): error TS2344: Type 'UnitEconomicsModel' does not satisfy the constraint 'GenericModel'.
+  Type 'UnitEconomicsModel' is not assignable to type 'Record<string, unknown>'.
+    Index signature for type 'string' is missing in type 'UnitEconomicsModel'.
+app/tools/valuation-calculator/page.tsx(13,23): error TS2344: Type 'ValuationModel' does not satisfy the constraint 'GenericModel'.
+  Type 'ValuationModel' is not assignable to type 'Record<string, unknown>'.
+    Index signature for type 'string' is missing in type 'ValuationModel'.
+components/advanced-tool-page.tsx(124,11): error TS2322: Type 'Model' is not assignable to type 'Awaited<Model>'.
+  Type 'GenericModel' is not assignable to type 'Awaited<Model>'.
+components/advanced-tool-page.tsx(207,31): error TS2345: Argument of type 'AppSettings | null' is not assignable to parameter of type 'AppSettings | undefined'.
+  Type 'null' is not assignable to type 'AppSettings | undefined'.
+components/advanced-tool-page.tsx(215,27): error TS2345: Argument of type 'AppSettings | null' is not assignable to parameter of type 'AppSettings | undefined'.
+  Type 'null' is not assignable to type 'AppSettings | undefined'.
+components/advanced-tool-page.tsx(226,27): error TS2345: Argument of type 'AppSettings | null' is not assignable to parameter of type 'AppSettings | undefined'.
+  Type 'null' is not assignable to type 'AppSettings | undefined'.
+components/advanced-tool-page.tsx(233,11): error TS18047: 'model' is possibly 'null'.
+components/advanced-tool-page.tsx(239,30): error TS2345: Argument of type 'Model | null' is not assignable to parameter of type 'Model'.
+  'Model' could be instantiated with an arbitrary type which could be unrelated to 'Model | null'.
+tests/csv-core.test.ts(22,7): error TS2322: Type 'false' is not assignable to type 'true'.
