@@ -1,0 +1,3 @@
+name = "katalis-construye"
+compatibility_date = "2026-02-21"
+compatibility_flags = ["nodejs_compat"]
