@@ -25,6 +25,7 @@ const TOOLS = [
   "Presupuesto anual",
   "Punto de equilibrio",
   "Dashboard KPI",
+  "Unit Economics",
 ];
 
 export default function Home() {
@@ -117,6 +118,11 @@ export default function Home() {
               {tool}
             </div>
           ))}
+        </div>
+        <div className="mt-6 flex justify-center">
+          <Link href="/tools" className="btn-secondary">
+            Ver todas las herramientas
+          </Link>
         </div>
       </section>
     </div>
