@@ -502,7 +502,7 @@ export default function CostsExpensesToolPage() {
  </label>
 
  <label className="space-y-1 text-sm text-neutral-700">
- Categoria
+          Categoría
  <input
  className="input-base"
  value={draft.category}
@@ -551,7 +551,7 @@ export default function CostsExpensesToolPage() {
  <StableResponsiveChart
  minWidth={320}
  minHeight={220}
- fallback={<p className="text-sm text-neutral-500">Cargando grafico...</p>}
+                    fallback={<p className="text-sm text-neutral-500">Cargando gráfico...</p>}
  >
  <PieChart>
  <Pie data={pieData} dataKey="value" nameKey="name" outerRadius={90} label>
@@ -564,7 +564,7 @@ export default function CostsExpensesToolPage() {
  </StableResponsiveChart>
  ) : (
  <p className="text-sm text-neutral-500">
- Agrega al menos un movimiento para ver grafico.
+              Agrega al menos un movimiento para ver gráfico.
  </p>
  )}
  </div>
@@ -577,7 +577,7 @@ export default function CostsExpensesToolPage() {
  <StableResponsiveChart
  minWidth={320}
  minHeight={220}
- fallback={<p className="text-sm text-neutral-500">Cargando grafico...</p>}
+                    fallback={<p className="text-sm text-neutral-500">Cargando gráfico...</p>}
  >
  <BarChart data={monthlyTrend}>
  <CartesianGrid stroke={chartTheme.chartGrid} strokeDasharray="3 3" />
@@ -599,7 +599,7 @@ export default function CostsExpensesToolPage() {
  <th className="p-2">Fecha</th>
  <th className="p-2">Descripcion</th>
  <th className="p-2">Tipo</th>
- <th className="p-2">Categoria</th>
+                  <th className="p-2">Categoría</th>
  <th className="p-2">Monto</th>
  <th className="p-2">Acciones</th>
  </tr>

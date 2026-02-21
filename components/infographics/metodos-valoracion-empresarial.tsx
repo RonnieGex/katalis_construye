@@ -1,15 +1,15 @@
 export function InfographicMetodosValoracion() {
   const metodos = [
     {
-      nombre: "Multiples de EBITDA",
-      formula: "Valor = EBITDA x Multiplo del sector",
+      nombre: "Múltiples de EBITDA",
+      formula: "Valor = EBITDA x múltiplo del sector",
       cuando: "Empresas rentables con EBITDA positivo",
       dark: true,
     },
     {
       nombre: "Flujo de Caja Descontado",
       formula: "Valor = FCL proyectado / Tasa de descuento",
-      cuando: "Proyecciones solidas a 5 anos",
+      cuando: "Proyecciones sólidas a 5 años",
       dark: false,
     },
     {
@@ -29,9 +29,9 @@ export function InfographicMetodosValoracion() {
   return (
     <div className="overflow-hidden border border-neutral-200 bg-white">
       <div className="bg-[#171717] px-6 py-4">
-        <p className="text-xs font-bold uppercase tracking-widest text-white/50">Capitulo 18</p>
+        <p className="text-xs font-bold uppercase tracking-widest text-white/50">Capítulo 18</p>
         <h3 className="text-xl font-black tracking-tight text-white">
-          Metodos de Valoracion de Empresas
+          Métodos de Valoración de Empresas
         </h3>
       </div>
       <div className="grid gap-3 p-5 md:grid-cols-2">
@@ -60,4 +60,3 @@ export function InfographicMetodosValoracion() {
     </div>
   );
 }
-

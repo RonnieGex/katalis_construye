@@ -96,7 +96,7 @@ export const FORMULA_REGISTRY: FormulaRegistryEntry[] = [
   {
     formulaId: "profitability.roi",
     toolId: "profitability-analyzer",
-    expression: "ROI = (utilidadNeta ÷ inversion) × 100",
+    expression: "ROI = (utilidadNeta ÷ inversión) × 100",
     humanName: "Retorno sobre la Inversión (ROI %)",
     humanExplanation:
       "Cuánto ganaste en términos porcentuales respecto a lo que invertiste. Si invertiste $100,000 y tu utilidad neta fue $25,000, tu ROI es 25%. Te permite comparar si fue mejor invertir en este negocio o en cualquier otra alternativa (banco, otro proyecto, etc.).",

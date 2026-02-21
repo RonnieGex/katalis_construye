@@ -446,9 +446,9 @@ export default function BreakEvenToolPage() {
  <div className="flex flex-wrap items-start justify-between gap-3">
  <div>
  <h1 className="section-title text-4xl text-black">Punto de equilibrio</h1>
- <p className="mt-2 text-neutral-700">Modo simple, multiproducto y simulacion de escenarios.</p>
+ <p className="mt-2 text-neutral-700">Modo simple, multiproducto y simulación de escenarios.</p>
  <CurrencyModeBadge settings={settings} />
- {savedAt ? <p className="mt-2 text-xs text-neutral-500">Ultimo guardado: {savedAt}</p> : null}
+        {savedAt ? <p className="mt-2 text-xs text-neutral-500">Último guardado: {savedAt}</p> : null}
  </div>
  {hasActiveSample ? (
  <button type="button" className="btn-secondary" onClick={() => void handleClearSample()}>
@@ -560,7 +560,7 @@ export default function BreakEvenToolPage() {
 
  <div className="mt-4 space-y-1 text-sm text-neutral-700">
  <p>
- Margen de contribucion:{" "}
+                  Margen de contribución:{" "}
  {formatAmountByDisplayMode(singleResult.contributionMargin, settings)}
  </p>
  <p>
@@ -684,7 +684,7 @@ export default function BreakEvenToolPage() {
  <StableResponsiveChart
  minWidth={320}
  minHeight={240}
- fallback={<p className="text-sm text-neutral-500">Cargando grafico...</p>}
+                    fallback={<p className="text-sm text-neutral-500">Cargando gráfico...</p>}
  >
  <BarChart data={comparisonBars}>
  <CartesianGrid stroke={chartTheme.chartGrid} strokeDasharray="3 3" />

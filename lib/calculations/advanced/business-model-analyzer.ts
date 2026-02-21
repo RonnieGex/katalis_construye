@@ -27,7 +27,7 @@ export function calculateBusinessModelAnalyzer(
   if (model.model === "services") {
     const utilization = model.capacityUsedPct;
     return {
-      kpiName: "Utilizacion",
+      kpiName: "Utilización",
       kpiValue: utilization,
       benchmark: model.benchmark,
       target: model.target,
@@ -49,7 +49,7 @@ export function calculateBusinessModelAnalyzer(
   const contribution = safeDivide(model.sales - model.cogs, model.sales);
   const value = contribution === null ? null : contribution * 100;
   return {
-    kpiName: "Margen de contribucion",
+    kpiName: "Margen de contribución",
     kpiValue: value,
     benchmark: model.benchmark,
     target: model.target,

@@ -11,7 +11,7 @@ export default function FintechEvaluatorPage() {
   return (
     <AdvancedToolPage<FintechEvaluatorModel>
       toolId="fintech-evaluator"
-      title="Evaluador de Tecnologia Financiera"
+      title="Evaluador de Tecnología Financiera"
       description="Puntua ajuste funcional, ROI de herramienta y riesgo de migracion."
       exportPrefix="fintech-evaluator"
       fields={[

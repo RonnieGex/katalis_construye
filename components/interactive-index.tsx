@@ -8,9 +8,9 @@ export function InteractiveIndex() {
   return (
     <div className="space-y-4">
       <section className="rounded-xl border border-neutral-300 bg-neutral-50 p-5">
-        <h2 className="text-2xl font-semibold text-black">Indice interactivo</h2>
+        <h2 className="text-2xl font-semibold text-black">Índice interactivo</h2>
         <p className="mt-2 text-sm text-neutral-700">
-          Explora por capas de aprendizaje. Abre cada bloque para ver capitulos y herramientas
+          Explora por capas de aprendizaje. Abre cada bloque para ver capítulos y herramientas
           sugeridas.
         </p>
       </section>
@@ -29,7 +29,7 @@ export function InteractiveIndex() {
                   <p className="text-xs uppercase tracking-wide text-neutral-500">{layer.title}</p>
                   <p className="mt-1 text-base text-neutral-700">{layer.description}</p>
                 </div>
-                <span className="text-xs text-neutral-500">{chapters.length} capitulos</span>
+                <span className="text-xs text-neutral-500">{chapters.length} capítulos</span>
               </div>
             </summary>
 
@@ -39,7 +39,7 @@ export function InteractiveIndex() {
                   <div className="flex flex-wrap items-start justify-between gap-3">
                     <div>
                       <p className="text-sm font-semibold text-black">
-                        Capitulo {chapter.chapterNumber}: {chapter.title}
+                        Capítulo {chapter.chapterNumber}: {chapter.title}
                       </p>
                       <p className="mt-1 text-sm text-neutral-700">{chapter.hint}</p>
                     </div>

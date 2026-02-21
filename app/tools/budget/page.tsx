@@ -111,7 +111,7 @@ function BudgetLineEditor({
  className="space-y-3 border border-neutral-300 p-4"
  >
  <label className="space-y-1 text-sm text-neutral-700">
- Nombre de linea
+ Nombre de línea
  <input
  className="input-base"
  value={line.name}
@@ -515,7 +515,7 @@ export default function BudgetToolPage() {
  </button>
  </div>
  </div>
- {savedAt ? <p className="mt-2 text-xs text-neutral-500">Ultimo guardado: {savedAt}</p> : null}
+        {savedAt ? <p className="mt-2 text-xs text-neutral-500">Último guardado: {savedAt}</p> : null}
  {exportMessage ? (
  <p
  className={`mt-2 text-xs ${exportState === "error" ? "text-red-700" : "text-emerald-700"
@@ -589,7 +589,7 @@ export default function BudgetToolPage() {
  Real: {formatAmountByDisplayMode(incomeTotals.actualTotal, settings)}
  </p>
  <p className="text-sm text-neutral-700">
- Variacion: {formatAmountByDisplayMode(incomeVariance.amount, settings)} (
+              Variación: {formatAmountByDisplayMode(incomeVariance.amount, settings)} (
  {incomeVariance.percent === null ? "N/A" : `${incomeVariance.percent.toFixed(2)}%`})
  </p>
  </article>
@@ -603,7 +603,7 @@ export default function BudgetToolPage() {
  Real: {formatAmountByDisplayMode(expenseTotals.actualTotal, settings)}
  </p>
  <p className="text-sm text-neutral-700">
- Variacion: {formatAmountByDisplayMode(expenseVariance.amount, settings)} (
+              Variación: {formatAmountByDisplayMode(expenseVariance.amount, settings)} (
  {expenseVariance.percent === null ? "N/A" : `${expenseVariance.percent.toFixed(2)}%`})
  </p>
  </article>
@@ -615,7 +615,7 @@ export default function BudgetToolPage() {
  </p>
  <p className="text-sm text-neutral-700">Real: {formatAmountByDisplayMode(actualNet, settings)}</p>
  <p className="text-sm text-neutral-700">
- Variacion: {formatAmountByDisplayMode(netVariance.amount, settings)} (
+              Variación: {formatAmountByDisplayMode(netVariance.amount, settings)} (
  {netVariance.percent === null ? "N/A" : `${netVariance.percent.toFixed(2)}%`})
  </p>
  </article>

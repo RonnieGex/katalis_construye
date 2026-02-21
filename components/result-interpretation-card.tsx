@@ -19,7 +19,7 @@ export function ResultInterpretationCard({
       {guide ? (
         <div className="mt-2 space-y-1 text-xs text-neutral-600">
           <p>
-            <span className="font-semibold text-black">Que significa:</span> {guide.meaning}
+            <span className="font-semibold text-black">Qué significa:</span> {guide.meaning}
           </p>
           {guide.healthyRange ? (
             <p>
@@ -32,7 +32,7 @@ export function ResultInterpretationCard({
             </p>
           ) : null}
           <p>
-            <span className="font-semibold text-black">Siguiente accion:</span> {guide.nextAction}
+            <span className="font-semibold text-black">Siguiente acción:</span> {guide.nextAction}
           </p>
         </div>
       ) : null}

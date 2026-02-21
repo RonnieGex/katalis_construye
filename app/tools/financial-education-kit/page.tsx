@@ -16,8 +16,8 @@ export default function FinancialEducationKitPage() {
   return (
     <AdvancedToolPage<FinancialEducationModel>
       toolId="financial-education-kit"
-      title="Kit de Educacion Financiera"
-      description="Mide conocimiento, tasa de finalizacion y ROI de capacitacion por rol."
+      title="Kit de Educación Financiera"
+      description="Mide conocimiento, tasa de finalización y ROI de capacitación por rol."
       exportPrefix="financial-education"
       fields={[
         { key: "role", label: "Rol", type: "text" },
@@ -26,7 +26,7 @@ export default function FinancialEducationKitPage() {
         { key: "testScore3", label: "Test 3", type: "number", step: "0.01" },
         { key: "completedModules", label: "Modulos completados", type: "number", step: "1" },
         { key: "totalModules", label: "Total modulos", type: "number", step: "1" },
-        { key: "trainingCost", label: "Costo capacitacion", type: "number", step: "0.01" },
+        { key: "trainingCost", label: "Costo de capacitación", type: "number", step: "0.01" },
         { key: "profitImprovement", label: "Mejora utilidad", type: "number", step: "0.01" },
       ]}
       getModel={getFinancialEducationModel}
@@ -39,14 +39,14 @@ export default function FinancialEducationKitPage() {
           { label: "Indice de conocimiento", value: s.knowledgeIndex.toFixed(2) },
           { label: "Tasa de finalizacion", value: formatNullablePct(s.completionRate) },
           {
-            label: "Costo de capacitacion",
+            label: "Costo de capacitación",
             value: formatAmountByDisplayMode(model.trainingCost, settings),
           },
           {
             label: "Mejora de utilidad",
             value: formatAmountByDisplayMode(model.profitImprovement, settings),
           },
-          { label: "ROI de capacitacion", value: formatNullablePct(s.trainingRoi) },
+          { label: "ROI de capacitación", value: formatNullablePct(s.trainingRoi) },
         ];
       }}
     />

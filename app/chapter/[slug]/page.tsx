@@ -94,7 +94,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
                 </div>
               ) : (
                 <p className="mt-2 text-sm text-neutral-700">
-                  Este capitulo es conceptual. Continua al siguiente paso guiado.
+                  Este capítulo es conceptual. Continúa al siguiente paso guiado.
                 </p>
               )}
             </article>
@@ -102,7 +102,7 @@ export default async function ChapterPage({ params }: ChapterPageProps) {
             <article className="rounded-lg border border-neutral-300 p-4">
               <p className="text-xs uppercase tracking-wide text-neutral-500">Verifica</p>
               <ul className="mt-2 space-y-1 text-sm text-neutral-700">
-                <li>1. Marca este capitulo como completado.</li>
+                <li>1. Marca este capítulo como completado.</li>
                 <li>2. Registra al menos 1 dato en la herramienta relacionada.</li>
                 <li>3. Revisa el siguiente paso recomendado.</li>
               </ul>

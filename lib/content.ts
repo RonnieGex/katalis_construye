@@ -1,4 +1,4 @@
-import { promises as fs } from "node:fs";
+﻿import { promises as fs } from "node:fs";
 import path from "node:path";
 
 export interface ContentDocument {
@@ -56,7 +56,7 @@ export async function getChapterDocuments(): Promise<ContentDocument[]> {
       const body = await fs.readFile(sourcePath, "utf8");
       return {
         slug: fileName.replace(/\.md$/i, ""),
-        title: getTitleFromMarkdown(body, `Capitulo ${chapterNumber}`),
+        title: getTitleFromMarkdown(body, `Capítulo ${chapterNumber}`),
         body,
         kind: "chapter" as const,
         chapterNumber,
@@ -135,24 +135,24 @@ function getTitleFromMarkdown(markdown: string, fallback: string): string {
 function createIntroductionDocument(): ContentDocument {
   return {
     slug: "introduccion_internacional",
-    title: "Introduccion",
+    title: "Introducción",
     kind: "structural",
     sourcePath: "virtual:introduccion",
     body: [
-      "# Introduccion",
+      "# Introducción",
       "",
       "Katalis Construye es un web book interactivo para desarrollar criterio financiero aplicable.",
       "",
-      "## Filosofia",
+      "## Filosofía",
       "",
       "- **Katalis**: impulsar decisiones que mueven tu negocio.",
-      "- **Construye**: formar criterio con practica, no solo teoria.",
+      "- **Construye**: formar criterio con práctica, no solo teoría.",
       "",
-      "## Como usarla",
+      "## Cómo usarla",
       "",
       "- Sigue la ruta en **Learn** para avanzar paso a paso.",
-      "- Usa **Tools** para aplicar conceptos con tus propios numeros.",
-      "- Revisa **Library** para estudiar cualquier capitulo en cualquier orden.",
+      "- Usa **Tools** para aplicar conceptos con tus propios números.",
+      "- Revisa **Library** para estudiar cualquier capítulo en cualquier orden.",
       "- Configura moneda y respaldo en **Settings**.",
     ].join("\n"),
   };

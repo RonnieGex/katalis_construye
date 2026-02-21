@@ -17,7 +17,7 @@ export default function ResilienceEvaluatorPage() {
     <AdvancedToolPage<ResilienceModel>
       toolId="resilience-evaluator"
       title="Evaluador de Resiliencia"
-      description="Mide reserva objetivo, runway, score de resiliencia y estres por caida de ventas."
+      description="Mide reserva objetivo, runway, score de resiliencia y estrés por caída de ventas."
       exportPrefix="resilience-evaluator"
       fields={[
         { key: "availableCash", label: "Caja disponible", type: "number", step: "0.01" },

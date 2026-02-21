@@ -1,4 +1,4 @@
-import type {
+﻿import type {
   AnnualBudget,
   BreakEvenModel,
   BusinessModelAnalyzerModel,
@@ -39,10 +39,10 @@ export function getCashFlowSampleEntries(): CashFlowEntry[] {
       startingBalance: 18000,
       inflows: [
         { name: "Ventas mostrador", projected: 42000, actual: 40500 },
-        { name: "Cobros a credito", projected: 8000, actual: 7600 },
+        { name: "Cobros a crédito", projected: 8000, actual: 7600 },
       ],
       outflows: [
-        { name: "Nomina", projected: 12000, actual: 12000 },
+        { name: "Nómina", projected: 12000, actual: 12000 },
         { name: "Renta", projected: 7000, actual: 7000 },
         { name: "Marketing", projected: 4500, actual: 5100 },
       ],
@@ -71,7 +71,7 @@ export function getCostsSampleEntries(): CostExpenseEntry[] {
       description: "Renta del local",
       amount: 7000,
       type: "fixed_cost",
-      category: "operacion",
+      category: "operación",
       notes: "Pago mensual",
       seedSource: "sample",
     },
@@ -80,7 +80,7 @@ export function getCostsSampleEntries(): CostExpenseEntry[] {
       description: "Materia prima",
       amount: 5200,
       type: "variable_cost",
-      category: "produccion",
+      category: "producción",
       notes: "Compra semanal",
       seedSource: "sample",
     },
@@ -90,7 +90,7 @@ export function getCostsSampleEntries(): CostExpenseEntry[] {
       amount: 1800,
       type: "expense",
       category: "marketing",
-      notes: "Campana awareness",
+      notes: "Campaña awareness",
       seedSource: "sample",
     },
     {
@@ -107,7 +107,7 @@ export function getCostsSampleEntries(): CostExpenseEntry[] {
       description: "Servicios administrativos",
       amount: 950,
       type: "expense",
-      category: "administracion",
+      category: "administración",
       notes: "Software y licencias",
       seedSource: "sample",
     },
@@ -163,9 +163,9 @@ export function getBreakEvenSampleModel(): BreakEvenModel {
     },
     multiProduct: {
       products: [
-        { name: "Linea A", price: 520, variableCost: 260, salesMixPct: 50 },
-        { name: "Linea B", price: 680, variableCost: 360, salesMixPct: 30 },
-        { name: "Linea C", price: 420, variableCost: 210, salesMixPct: 20 },
+        { name: "Línea A", price: 520, variableCost: 260, salesMixPct: 50 },
+        { name: "Línea B", price: 680, variableCost: 360, salesMixPct: 30 },
+        { name: "Línea C", price: 420, variableCost: 210, salesMixPct: 20 },
       ],
     },
     scenarios: [
@@ -255,14 +255,14 @@ export function getFinancialStrategySampleModel(): FinancialStrategyModel {
 
 export function getContingencySampleModel(): ContingencyModel {
   return {
-    riskName: "Caida de demanda",
+    riskName: "Caída de demanda",
     probabilityPct: 35,
     impactPct: 45,
     monthlyFixedOutflow: 210000,
     reserveMonths: 6,
     reserveBalance: 920000,
     trigger: "3 semanas seguidas con -20% en ventas",
-    owner: "Direccion general",
+    owner: "Dirección general",
     responseTimeDays: 5,
     seedSource: "sample",
   };
@@ -372,3 +372,4 @@ export function getResilienceSampleModel(): ResilienceModel {
     seedSource: "sample",
   };
 }
+

@@ -135,7 +135,7 @@ export default function SettingsPage() {
 
  async function handleReset() {
  const confirmed = window.confirm(
- "Esta accion elimina los datos locales guardados. Quieres continuar?",
+ "Esta acción elimina los datos locales guardados. ¿Quieres continuar?",
  );
 
  if (!confirmed) {

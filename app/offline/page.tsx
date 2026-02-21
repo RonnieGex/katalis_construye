@@ -11,7 +11,7 @@ export default function OfflinePage() {
  </div>
  <h1 className="section-title text-4xl text-black">Modo sin conexion</h1>
  <p className="mt-2 text-neutral-700">
- Esta ruta aun no fue cacheada. Prueba volver cuando recuperes internet.
+ Esta ruta aún no fue cacheada. Prueba volver cuando recuperes internet.
  </p>
  </section>
 

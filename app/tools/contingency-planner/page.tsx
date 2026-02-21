@@ -28,7 +28,7 @@ export default function ContingencyPlannerPage() {
         { key: "reserveBalance", label: "Reserva disponible", type: "number", step: "0.01" },
         { key: "trigger", label: "Trigger", type: "text" },
         { key: "owner", label: "Responsable", type: "text" },
-        { key: "responseTimeDays", label: "Tiempo respuesta (dias)", type: "number", step: "1" },
+        { key: "responseTimeDays", label: "Tiempo de respuesta (días)", type: "number", step: "1" },
       ]}
       getModel={getContingencyModel}
       saveModel={saveContingencyModel}

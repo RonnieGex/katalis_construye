@@ -453,7 +453,7 @@ export default function CashFlowToolPage() {
  <div>
  <div className="flex items-center gap-3 mb-4">
  <span className="h-3 w-3 bg-[var(--primary)] animate-pulse"></span>
- <h2 className="text-[var(--foreground)]/50 text-sm font-bold tracking-widest uppercase">Herramientas &gt; GestiÃ³n Mensual</h2>
+          <h2 className="text-[var(--foreground)]/50 text-sm font-bold tracking-widest uppercase">Herramientas &gt; Gestión Mensual</h2>
  </div>
  <h1 className="text-[var(--foreground)] text-5xl md:text-7xl font-black tracking-tighter leading-none">
  Flujo de Caja
@@ -481,7 +481,7 @@ export default function CashFlowToolPage() {
  <div className="flex flex-col gap-3 text-right">
  {savedAt && (
  <div className="flex items-center justify-end gap-2 text-[var(--foreground)]/40 text-xs font-bold uppercase tracking-wide">
- <span>Ãšltimo guardado: {savedAt}</span>
+              <span>Último guardado: {savedAt}</span>
  <span className="material-symbols-outlined text-sm">cloud_done</span>
  </div>
  )}
@@ -586,7 +586,7 @@ export default function CashFlowToolPage() {
  </p>
  </div>
  <div>
- <p className="text-xs text-white/40 font-bold uppercase tracking-widest mb-1">ProyecciÃ³n Cierre</p>
+                  <p className="text-xs text-white/40 font-bold uppercase tracking-widest mb-1">Proyección cierre</p>
  <p className="text-2xl font-bold text-white/50">
  {formatAmountByDisplayMode(monthSummary.projectedEndingBalance, settings)}
  </p>
@@ -614,7 +614,7 @@ export default function CashFlowToolPage() {
  <div key={`inflow-${index}`} className="group grid gap-3 md:grid-cols-12 bg-[var(--panel-soft)] hover:bg-[var(--panel-light)] border border-transparent hover:border-[var(--stroke)] p-3 md:p-2 hover-lift items-center transition-all">
  <input
  className="w-full bg-transparent border-none focus:ring-0 text-[var(--foreground)] font-bold placeholder:text-[var(--foreground)]/40 md:col-span-5 px-4"
- placeholder="CategorÃ­a de ingreso"
+                          placeholder="Categoría de ingreso"
  value={line.name}
  onChange={(event) => updateLine("inflows", index, "name", event.target.value)}
  />
@@ -675,7 +675,7 @@ export default function CashFlowToolPage() {
  <div key={`outflow-${index}`} className="group grid gap-3 md:grid-cols-12 bg-[var(--panel-soft)] hover:bg-[var(--panel-light)] border border-transparent hover:border-[var(--stroke)] p-3 md:p-2 hover-lift items-center transition-all">
  <input
  className="w-full bg-transparent border-none focus:ring-0 text-[var(--foreground)] font-bold placeholder:text-[var(--foreground)]/40 md:col-span-5 px-4"
- placeholder="CategorÃ­a de egreso"
+                          placeholder="Categoría de egreso"
  value={line.name}
  onChange={(event) => updateLine("outflows", index, "name", event.target.value)}
  />
@@ -732,7 +732,7 @@ export default function CashFlowToolPage() {
  <StableResponsiveChart
  minWidth={320}
  minHeight={250}
- fallback={<p className="text-sm text-[var(--foreground)]/40">Cargando grÃ¡fico...</p>}
+                    fallback={<p className="text-sm text-[var(--foreground)]/40">Cargando gráfico...</p>}
  >
  <BarChart data={monthBars} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
  <CartesianGrid stroke="var(--stroke)" strokeDasharray="3 3" vertical={false} />
@@ -751,7 +751,7 @@ export default function CashFlowToolPage() {
  <div>
  <div className="flex items-center gap-3 mb-2">
  <span className="material-symbols-outlined text-[var(--foreground)]/30">monitoring</span>
- <h2 className="text-[var(--foreground)] text-lg font-bold tracking-tight">Tendencia HistÃ³rica</h2>
+                <h2 className="text-[var(--foreground)] text-lg font-bold tracking-tight">Tendencia histórica</h2>
  </div>
  <p className="text-[var(--foreground)]/40 text-xs uppercase tracking-widest font-bold mb-8">Todos los meses registrados</p>
  </div>
@@ -759,7 +759,7 @@ export default function CashFlowToolPage() {
  <StableResponsiveChart
  minWidth={320}
  minHeight={250}
- fallback={<p className="text-sm text-[var(--foreground)]/40">Cargando grÃ¡fico...</p>}
+                    fallback={<p className="text-sm text-[var(--foreground)]/40">Cargando gráfico...</p>}
  >
  <LineChart data={trendSeries} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
  <CartesianGrid stroke="var(--stroke)" strokeDasharray="3 3" vertical={false} />

@@ -20,8 +20,8 @@ export default function InvestmentEvaluatorPage() {
       description="Analiza ROI, payback, NPV e IRR con tasa de descuento editable."
       exportPrefix="investment-evaluator"
       fields={[
-        { key: "investmentId", label: "ID inversion", type: "text" },
-        { key: "initialCost", label: "Inversion inicial", type: "number", step: "0.01" },
+        { key: "investmentId", label: "ID inversión", type: "text" },
+        { key: "initialCost", label: "Inversión inicial", type: "number", step: "0.01" },
         { key: "annualBenefit", label: "Beneficio anual", type: "number", step: "0.01" },
         { key: "discountRatePct", label: "Tasa descuento (%)", type: "number", step: "0.01" },
         { key: "years", label: "Anos", type: "number", step: "1" },
@@ -35,7 +35,7 @@ export default function InvestmentEvaluatorPage() {
         const s = calculateInvestmentEvaluator(model);
         return [
           { label: "ROI", value: formatNullable(s.roi, "%") },
-          { label: "Payback (anos)", value: formatNullable(s.payback) },
+          { label: "Payback (años)", value: formatNullable(s.payback) },
           { label: "NPV", value: formatAmountByDisplayMode(s.npv, settings) },
           { label: "IRR", value: formatNullable(s.irr, "%") },
         ];

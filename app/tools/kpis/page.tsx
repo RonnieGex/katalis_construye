@@ -436,7 +436,7 @@ export default function KpiDashboardPage() {
  </section>
 
  <section className="panel p-5">
- <h2 className="section-title text-2xl text-black">Indicadores KPI (capitulo 14)</h2>
+        <h2 className="section-title text-2xl text-black">Indicadores KPI (capítulo 14)</h2>
  <div className="mt-3 grid gap-3 text-sm text-neutral-700 md:grid-cols-3">
  <p>
  <span className="font-semibold text-black">Liquidez corriente:</span>{" "}
@@ -460,7 +460,7 @@ export default function KpiDashboardPage() {
  <span className="font-semibold text-black">Dias de cobro:</span>{" "}
  {kpiSummary.cap14.daysSalesOutstanding === null
  ? "N/A"
- : `${kpiSummary.cap14.daysSalesOutstanding.toFixed(2)} dias`}
+              : `${kpiSummary.cap14.daysSalesOutstanding.toFixed(2)} días`}
  </p>
  <p>
  <span className="font-semibold text-black">Burn rate (consumo de caja):</span>{" "}
@@ -482,7 +482,7 @@ export default function KpiDashboardPage() {
  <StableResponsiveChart
  minWidth={320}
  minHeight={240}
- fallback={<p className="text-sm text-neutral-500">Cargando grafico...</p>}
+                    fallback={<p className="text-sm text-neutral-500">Cargando gráfico...</p>}
  >
  <LineChart data={cashflowTrend}>
  <XAxis dataKey="month" stroke={chartTheme.chartMuted} />
@@ -502,7 +502,7 @@ export default function KpiDashboardPage() {
  <StableResponsiveChart
  minWidth={320}
  minHeight={240}
- fallback={<p className="text-sm text-neutral-500">Cargando grafico...</p>}
+                    fallback={<p className="text-sm text-neutral-500">Cargando gráfico...</p>}
  >
  <PieChart>
  <Pie data={costPieData} dataKey="value" nameKey="name" outerRadius={95} label>

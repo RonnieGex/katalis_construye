@@ -17,7 +17,7 @@ export default function UnitEconomicsPage() {
     <AdvancedToolPage<UnitEconomicsModel>
       toolId="unit-economics"
       title="Economia Unitaria"
-      description="Valida margen de contribucion, COCA, LTV y recuperacion de adquisicion por cliente."
+      description="Valida margen de contribución, COCA, LTV y recuperación de adquisición por cliente."
       exportPrefix="unit-economics"
       fields={[
         { key: "price", label: "Precio", type: "number", step: "0.01" },
@@ -26,7 +26,7 @@ export default function UnitEconomicsPage() {
         { key: "newCustomers", label: "Nuevos clientes", type: "number", step: "1" },
         { key: "avgTicket", label: "Ticket promedio", type: "number", step: "0.01" },
         { key: "purchaseFrequency", label: "Frecuencia de compra", type: "number", step: "0.01" },
-        { key: "retentionPeriod", label: "Periodo de retencion", type: "number", step: "1" },
+        { key: "retentionPeriod", label: "Período de retención", type: "number", step: "1" },
         { key: "discountRatePct", label: "Tasa de descuento (%)", type: "number", step: "0.01" },
       ]}
       getModel={getUnitEconomicsModel}
@@ -36,7 +36,7 @@ export default function UnitEconomicsPage() {
       summary={(model, settings) => {
         const s = calculateUnitEconomics(model);
         return [
-          { label: "Margen de contribucion", value: formatAmountByDisplayMode(s.contributionMargin, settings) },
+          { label: "Margen de contribución", value: formatAmountByDisplayMode(s.contributionMargin, settings) },
           { label: "COCA", value: formatNullable(s.coca) },
           { label: "Economia unitaria", value: formatNullable(s.unitEconomics) },
           { label: "LTV", value: formatAmountByDisplayMode(s.ltv, settings) },

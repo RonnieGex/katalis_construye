@@ -1,4 +1,4 @@
-import { TOOL_IDS, type ToolId, type ToolStepId } from "@/lib/domain";
+﻿import { TOOL_IDS, type ToolId, type ToolStepId } from "@/lib/domain";
 
 export type UnitHint = "monto" | "%" | "meses" | "anual" | "ratio" | "conteo";
 
@@ -47,20 +47,20 @@ const TOOL_PURPOSES: Record<ToolId, string> = {
   cashflow: "Controlar entradas y salidas para evitar quiebres de caja.",
   costs: "Entender la estructura de costos y gastos para proteger margen.",
   budget: "Comparar plan vs real para corregir a tiempo.",
-  breakeven: "Calcular unidades minimas para cubrir costos fijos.",
+  breakeven: "Calcular unidades mínimas para cubrir costos fijos.",
   kpis: "Monitorear salud financiera integral con indicadores accionables.",
   "unit-economics": "Validar rentabilidad unitaria antes de escalar.",
   "financing-options": "Comparar alternativas de financiamiento por costo y control.",
   "debt-manager": "Optimizar deuda y cobertura de intereses.",
-  "profitability-analyzer": "Medir margenes y retorno por segmento.",
+  "profitability-analyzer": "Medir márgenes y retorno por segmento.",
   "financial-strategy-planner": "Proyectar estrategia financiera de mediano plazo.",
-  "contingency-planner": "Preparar respuesta financiera para riesgos criticos.",
-  "financial-education-kit": "Vincular formacion financiera con resultados del equipo.",
+  "contingency-planner": "Preparar respuesta financiera para riesgos críticos.",
+  "financial-education-kit": "Vincular formación financiera con resultados del equipo.",
   "investment-evaluator": "Evaluar inversiones con criterios objetivos.",
   "business-model-analyzer": "Analizar KPI clave por modelo de negocio.",
   "international-finance-manager": "Medir impacto cambiario y definir cobertura/precio.",
-  "fintech-evaluator": "Elegir tecnologia financiera por ajuste, ROI y riesgo de migracion.",
-  "valuation-calculator": "Estimar rango de valuacion del negocio.",
+  "fintech-evaluator": "Elegir tecnología financiera por ajuste, ROI y riesgo de migración.",
+  "valuation-calculator": "Estimar rango de valuación del negocio.",
   "resilience-evaluator": "Medir capacidad de resistir escenarios adversos.",
 };
 
@@ -87,12 +87,12 @@ const CORE_OVERRIDES: Partial<Record<ToolId, Pick<ToolGuideSpec, "steps" | "resu
         id: "cashflow-step-capture",
         title: "Paso 2: Captura principal",
         objective: "Registra ingresos y egresos proyectados y reales.",
-        completionRule: "Agrega al menos una linea de ingreso y una de egreso.",
+        completionRule: "Agrega al menos una línea de ingreso y una de egreso.",
         fields: [
           {
             fieldKey: "inflows",
             whatIsIt: "Entradas de dinero del mes.",
-            howToFill: "Crea una linea por fuente de ingreso.",
+            howToFill: "Crea una línea por fuente de ingreso.",
             example: "Ventas tienda: 85000 / 79000",
           },
           {
@@ -105,9 +105,9 @@ const CORE_OVERRIDES: Partial<Record<ToolId, Pick<ToolGuideSpec, "steps" | "resu
       },
       {
         id: "cashflow-step-interpret",
-        title: "Paso 3: Interpretacion y decision",
+        title: "Paso 3: Interpretación y decisión",
         objective: "Compara cierre proyectado vs real y corrige desviaciones.",
-        completionRule: "Revisa cierre real y define una accion correctiva.",
+        completionRule: "Revisa cierre real y define una acción correctiva.",
         fields: [
           {
             fieldKey: "closing-balance",
@@ -123,7 +123,7 @@ const CORE_OVERRIDES: Partial<Record<ToolId, Pick<ToolGuideSpec, "steps" | "resu
         resultKey: "projectedEndingBalance",
         meaning: "Caja esperada al cierre.",
         warningRule: "Si es negativa, falta liquidez para operar.",
-        nextAction: "Reprograma egresos no criticos y acelera cobranzas.",
+        nextAction: "Reprograma egresos no críticos y acelera cobranzas.",
       },
       {
         resultKey: "actualEndingBalance",
@@ -158,8 +158,8 @@ const CORE_OVERRIDES: Partial<Record<ToolId, Pick<ToolGuideSpec, "steps" | "resu
       {
         id: "costs-step-capture",
         title: "Paso 2: Captura principal",
-        objective: "Captura monto y descripcion para trazabilidad.",
-        completionRule: "Registra monto, descripcion y categoria.",
+        objective: "Captura monto y descripción para trazabilidad.",
+        completionRule: "Registra monto, descripción y categoría.",
         fields: [
           {
             fieldKey: "amount",
@@ -177,21 +177,21 @@ const CORE_OVERRIDES: Partial<Record<ToolId, Pick<ToolGuideSpec, "steps" | "resu
           {
             fieldKey: "category",
             whatIsIt: "Etiqueta para agrupar.",
-            howToFill: "Usa categorias consistentes.",
+            howToFill: "Usa categorías consistentes.",
             example: "marketing",
           },
         ],
       },
       {
         id: "costs-step-interpret",
-        title: "Paso 3: Interpretacion y decision",
+        title: "Paso 3: Interpretación y decisión",
         objective: "Analiza composicion de costos para priorizar ajustes.",
         completionRule: "Detecta el tipo de salida con mayor peso.",
         fields: [
           {
             fieldKey: "distribution",
             whatIsIt: "Distribucion porcentual por tipo.",
-            howToFill: "Se interpreta en grafico, no se captura.",
+            howToFill: "Se interpreta en gráfico, no se captura.",
             example: "Costos variables 48%",
           },
         ],
@@ -201,7 +201,7 @@ const CORE_OVERRIDES: Partial<Record<ToolId, Pick<ToolGuideSpec, "steps" | "resu
       {
         resultKey: "overallTotal",
         meaning: "Total acumulado del periodo.",
-        warningRule: "Si sube mas rapido que ventas, erosiona margen.",
+        warningRule: "Si sube más rápido que ventas, erosiona margen.",
         nextAction: "Reduce o renegocia el tipo de salida dominante.",
       },
     ],
@@ -211,24 +211,24 @@ const CORE_OVERRIDES: Partial<Record<ToolId, Pick<ToolGuideSpec, "steps" | "resu
       {
         id: "budget-step-context",
         title: "Paso 1: Contexto base",
-        objective: "Selecciona el ano y define lineas relevantes.",
-        completionRule: "Define ano y lineas de ingreso/egreso.",
+        objective: "Selecciona el año y define líneas relevantes.",
+        completionRule: "Define año y líneas de ingreso/egreso.",
         fields: [
           {
             fieldKey: "year",
-            whatIsIt: "Ano presupuestal.",
-            howToFill: "Usa el ano fiscal vigente.",
+            whatIsIt: "Año presupuestal.",
+            howToFill: "Usa el año fiscal vigente.",
             example: "2026",
           },
           {
             fieldKey: "incomeLines",
             whatIsIt: "Fuentes de ingreso a seguir.",
-            howToFill: "Una linea por fuente principal.",
+            howToFill: "Una línea por fuente principal.",
             example: "Ventas B2B",
           },
           {
             fieldKey: "expenseLines",
-            whatIsIt: "Lineas de egreso a controlar.",
+            whatIsIt: "Líneas de egreso a controlar.",
             howToFill: "Incluye costos directos y operativos.",
             example: "Costos directos",
           },
@@ -258,9 +258,9 @@ const CORE_OVERRIDES: Partial<Record<ToolId, Pick<ToolGuideSpec, "steps" | "resu
       },
       {
         id: "budget-step-interpret",
-        title: "Paso 3: Interpretacion y decision",
+        title: "Paso 3: Interpretación y decisión",
         objective: "Detecta variaciones y define acciones correctivas.",
-        completionRule: "Identifica una variacion critica con accion asociada.",
+        completionRule: "Identifica una variación crítica con acción asociada.",
         fields: [
           {
             fieldKey: "variance",
@@ -285,13 +285,13 @@ const CORE_OVERRIDES: Partial<Record<ToolId, Pick<ToolGuideSpec, "steps" | "resu
       {
         id: "breakeven-step-context",
         title: "Paso 1: Contexto base",
-        objective: "Define costos fijos y margenes unitarios base.",
+        objective: "Define costos fijos y márgenes unitarios base.",
         completionRule: "Completa costos fijos, precio y costo variable.",
         fields: [
           {
             fieldKey: "fixedCosts",
             whatIsIt: "Costos que existen aunque no vendas.",
-            howToFill: "Suma renta, nomina fija y servicios.",
+            howToFill: "Suma renta, nómina fija y servicios.",
             example: "95000",
             unitHint: "monto",
           },
@@ -305,7 +305,7 @@ const CORE_OVERRIDES: Partial<Record<ToolId, Pick<ToolGuideSpec, "steps" | "resu
           {
             fieldKey: "singleProduct.variableCost",
             whatIsIt: "Costo variable por unidad.",
-            howToFill: "Incluye solo costos que varian con la venta.",
+            howToFill: "Incluye solo costos que varían con la venta.",
             example: "140",
             unitHint: "monto",
           },
@@ -319,7 +319,7 @@ const CORE_OVERRIDES: Partial<Record<ToolId, Pick<ToolGuideSpec, "steps" | "resu
         fields: [
           {
             fieldKey: "multiProduct.products",
-            whatIsIt: "Productos y participacion en ventas.",
+            whatIsIt: "Productos y participación en ventas.",
             howToFill: "Define nombre, precio, costo y mix.",
             example: "A 60%, B 40%",
           },
@@ -333,13 +333,13 @@ const CORE_OVERRIDES: Partial<Record<ToolId, Pick<ToolGuideSpec, "steps" | "resu
       },
       {
         id: "breakeven-step-interpret",
-        title: "Paso 3: Interpretacion y decision",
+        title: "Paso 3: Interpretación y decisión",
         objective: "Valida si existe equilibrio sostenible.",
         completionRule: "Confirma unidades de equilibrio y margen positivo.",
         fields: [
           {
             fieldKey: "units",
-            whatIsIt: "Unidades minimas para cubrir costos.",
+            whatIsIt: "Unidades mínimas para cubrir costos.",
             howToFill: "Se interpreta en resultados.",
             example: "450 unidades",
           },
@@ -378,8 +378,8 @@ const CORE_OVERRIDES: Partial<Record<ToolId, Pick<ToolGuideSpec, "steps" | "resu
           {
             fieldKey: "source-budget",
             whatIsIt: "Fuente de presupuesto.",
-            howToFill: "Carga plan y real del ano activo.",
-            example: "Plan/real actualizado al ultimo mes",
+            howToFill: "Carga plan y real del año activo.",
+            example: "Plan/real actualizado al último mes",
           },
         ],
       },
@@ -387,19 +387,19 @@ const CORE_OVERRIDES: Partial<Record<ToolId, Pick<ToolGuideSpec, "steps" | "resu
         id: "kpis-step-capture",
         title: "Paso 2: Lectura principal",
         objective: "Revisa indicadores financieros y de liquidez.",
-        completionRule: "Evalua margenes y liquidez al menos una vez por cierre.",
+        completionRule: "Evalúa márgenes y liquidez al menos una vez por cierre.",
         fields: [
           {
             fieldKey: "grossMargin",
             whatIsIt: "Margen bruto del negocio.",
-            howToFill: "Se calcula automatico; valida tendencia.",
-            example: ">= 40% segun modelo",
+            howToFill: "Se calcula automático; valida tendencia.",
+            example: ">= 40% según modelo",
             unitHint: "%",
           },
           {
             fieldKey: "runwayMonths",
             whatIsIt: "Meses de caja disponible.",
-            howToFill: "Se calcula automatico con caja y burn.",
+            howToFill: "Se calcula automático con caja y burn.",
             example: ">= 6 meses",
             unitHint: "meses",
           },
@@ -407,9 +407,9 @@ const CORE_OVERRIDES: Partial<Record<ToolId, Pick<ToolGuideSpec, "steps" | "resu
       },
       {
         id: "kpis-step-interpret",
-        title: "Paso 3: Interpretacion y decision",
+        title: "Paso 3: Interpretación y decisión",
         objective: "Cruza indicadores para tomar acciones concretas.",
-        completionRule: "Define una accion por KPI en alerta.",
+        completionRule: "Define una acción por KPI en alerta.",
         fields: [
           {
             fieldKey: "kpi-thresholds",
@@ -429,7 +429,7 @@ const CORE_OVERRIDES: Partial<Record<ToolId, Pick<ToolGuideSpec, "steps" | "resu
       {
         resultKey: "margins.netMargin",
         meaning: "Rentabilidad final del periodo.",
-        nextAction: "Si baja, recorta gasto improductivo y mejora conversion.",
+        nextAction: "Si baja, recorta gasto improductivo y mejora conversión.",
       },
       {
         resultKey: "runwayMonths",
@@ -461,66 +461,66 @@ type FieldGuideTemplate = Omit<FieldGuide, "fieldKey">;
 type ResultGuideTemplate = Omit<ResultGuide, "resultKey">;
 
 const TOOL_WHEN_TO_USE: Record<ToolId, string> = {
-  cashflow: "Usala en cierre semanal o mensual para anticipar faltantes de caja.",
-  costs: "Usala cada semana para clasificar gastos y proteger margen.",
-  budget: "Usala en cada cierre mensual para comparar plan contra realidad.",
-  breakeven: "Usala antes de lanzar o ajustar precios para validar sostenibilidad.",
-  kpis: "Usala al cierre para revisar salud financiera integral y actuar rapido.",
+  cashflow: "Úsala en cierre semanal o mensual para anticipar faltantes de caja.",
+  costs: "Úsala cada semana para clasificar gastos y proteger margen.",
+  budget: "Úsala en cada cierre mensual para comparar plan contra realidad.",
+  breakeven: "Úsala antes de lanzar o ajustar precios para validar sostenibilidad.",
+  kpis: "Úsala al cierre para revisar salud financiera integral y actuar rápido.",
   "unit-economics":
-    "Usala antes de escalar ventas; primero valida que cada cliente deje valor.",
+    "Úsala antes de escalar ventas; primero valida que cada cliente deje valor.",
   "financing-options":
-    "Usala cuando necesites capital y quieras comparar costo real, control y riesgo.",
+    "Úsala cuando necesites capital y quieras comparar costo real, control y riesgo.",
   "debt-manager":
-    "Usala al renegociar deuda o cuando sube el costo financiero de la empresa.",
+    "Úsala al renegociar deuda o cuando sube el costo financiero de la empresa.",
   "profitability-analyzer":
-    "Usala en cierres mensuales para detectar que segmento gana y cual destruye margen.",
+    "Úsala en cierres mensuales para detectar qué segmento gana y cuál destruye margen.",
   "financial-strategy-planner":
-    "Usala en planeacion trimestral o anual para alinear metas, crecimiento y capital.",
+    "Úsala en planeación trimestral o anual para alinear metas, crecimiento y capital.",
   "contingency-planner":
-    "Usala antes de una crisis para definir reservas, responsables y tiempos de respuesta.",
+    "Úsala antes de una crisis para definir reservas, responsables y tiempos de respuesta.",
   "financial-education-kit":
-    "Usala al formar equipo para vincular capacitacion financiera con resultados reales.",
+    "Úsala al formar equipo para vincular capacitación financiera con resultados reales.",
   "investment-evaluator":
-    "Usala antes de invertir para priorizar proyectos por retorno, riesgo y recuperacion.",
+    "Úsala antes de invertir para priorizar proyectos por retorno, riesgo y recuperación.",
   "business-model-analyzer":
-    "Usala al ajustar estrategia comercial segun tu modelo de negocio.",
+    "Úsala al ajustar estrategia comercial según tu modelo de negocio.",
   "international-finance-manager":
-    "Usala cuando operes con moneda extranjera y necesites controlar riesgo cambiario.",
+    "Úsala cuando operes con moneda extranjera y necesites controlar riesgo cambiario.",
   "fintech-evaluator":
-    "Usala al elegir tecnologia financiera para evitar comprar por moda y no por necesidad.",
+    "Úsala al elegir tecnología financiera para evitar comprar por moda y no por necesidad.",
   "valuation-calculator":
-    "Usala para estimar valor del negocio con varios metodos, no con un solo numero.",
+    "Úsala para estimar valor del negocio con varios métodos, no con un solo número.",
   "resilience-evaluator":
-    "Usala para medir si tu empresa resiste caidas de ventas y eventos imprevistos.",
+    "Úsala para medir si tu empresa resiste caídas de ventas y eventos imprevistos.",
 };
 
 const TOOL_SUCCESS_SIGNALS: Record<ToolId, string> = {
-  cashflow: "Sabes si faltara caja y ya definiste accion concreta para corregirlo.",
-  costs: "Identificaste en que rubro actuar primero para mejorar rentabilidad.",
-  budget: "Puedes explicar las variaciones y su plan de correccion.",
-  breakeven: "Conoces cuantas unidades necesitas vender sin perder dinero.",
-  kpis: "Tienes KPI en alerta con accion y responsable definidos.",
+  cashflow: "Sabes si faltará caja y ya definiste acción concreta para corregirlo.",
+  costs: "Identificaste en qué rubro actuar primero para mejorar rentabilidad.",
+  budget: "Puedes explicar las variaciones y su plan de corrección.",
+  breakeven: "Conoces cuántas unidades necesitas vender sin perder dinero.",
+  kpis: "Tienes KPI en alerta con acción y responsable definidos.",
   "unit-economics":
-    "Tu relacion LTV/COCA y tiempo de recuperacion justifican crecimiento.",
+    "Tu relación LTV/COCA y tiempo de recuperación justifican crecimiento.",
   "financing-options":
-    "Elegiste una opcion de financiamiento por criterio, no por intuicion.",
+    "Elegiste una opción de financiamiento por criterio, no por intuición.",
   "debt-manager": "Priorizaste pagos y evaluaste si refinanciar baja costo total.",
   "profitability-analyzer":
     "Detectaste que producto o segmento requiere ajuste de precio o costo.",
   "financial-strategy-planner":
-    "Tu proyeccion cumple metas y respeta limite de deuda definido.",
+    "Tu proyección cumple metas y respeta límite de deuda definido.",
   "contingency-planner":
-    "Tu riesgo critico tiene trigger, responsable y fondo de emergencia suficiente.",
+    "Tu riesgo crítico tiene trigger, responsable y fondo de emergencia suficiente.",
   "financial-education-kit":
-    "Puedes medir si la capacitacion esta mejorando resultados operativos.",
+    "Puedes medir si la capacitación está mejorando resultados operativos.",
   "investment-evaluator":
-    "Decides con ROI, VAN y periodo de recuperacion, no solo con percepcion.",
+    "Decides con ROI, VAN y periodo de recuperación, no solo con percepción.",
   "business-model-analyzer":
     "Conoces el KPI palanca de tu modelo y la brecha contra objetivo.",
   "international-finance-manager":
     "Tienes claro el impacto cambiario y el precio recomendado con buffer.",
   "fintech-evaluator":
-    "Seleccionaste herramienta por ajuste, retorno y riesgo de migracion.",
+    "Seleccionaste herramienta por ajuste, retorno y riesgo de migración.",
   "valuation-calculator":
     "Obtuviste un rango de valor coherente y defendible con supuestos claros.",
   "resilience-evaluator":
@@ -530,7 +530,7 @@ const TOOL_SUCCESS_SIGNALS: Record<ToolId, string> = {
 const FIELD_GUIDE_BY_KEY: Record<string, FieldGuideTemplate> = {
   ebit: {
     whatIsIt:
-      "Ganancia operativa antes de intereses e impuestos. Mide si la operacion genera resultado por si sola.",
+      "Ganancia operativa antes de intereses e impuestos. Mide si la operación genera resultado por sí sola.",
     howToFill:
       "Toma el dato del estado de resultados del mismo periodo: ventas menos costos y gastos operativos.",
     example: "Si vendes 300000 y tus costos/gastos operativos son 240000, EBIT = 60000.",
@@ -539,18 +539,18 @@ const FIELD_GUIDE_BY_KEY: Record<string, FieldGuideTemplate> = {
   },
   ebitda: {
     whatIsIt:
-      "Resultado operativo antes de intereses, impuestos, depreciacion y amortizacion.",
+      "Resultado operativo antes de intereses, impuestos, depreciación y amortización.",
     howToFill:
-      "Usa el EBITDA real del periodo o calculalo desde tu estado financiero.",
+      "Usa el EBITDA real del periodo o calcúlalo desde tu estado financiero.",
     example: "EBITDA anual: 1250000.",
     unitHint: "monto",
     commonMistake: "Confundir EBITDA con flujo de caja disponible.",
   },
   marketingsales: {
     whatIsIt:
-      "Inversion en marketing y ventas del periodo para conseguir clientes nuevos.",
+      "Inversión en marketing y ventas del periodo para conseguir clientes nuevos.",
     howToFill:
-      "Incluye anuncios, comisiones y costos comerciales directamente ligados a adquisicion.",
+      "Incluye anuncios, comisiones y costos comerciales directamente ligados a adquisición.",
     example: "Publicidad y comisiones: 38000 en el mes.",
     unitHint: "monto",
     commonMistake: "Sumar gastos administrativos que no adquieren clientes.",
@@ -565,20 +565,20 @@ const FIELD_GUIDE_BY_KEY: Record<string, FieldGuideTemplate> = {
   variablecost: {
     whatIsIt: "Costo variable por unidad vendida.",
     howToFill:
-      "Incluye solo costos que cambian al vender una unidad (insumo, comision, envio variable).",
+      "Incluye solo costos que cambian al vender una unidad (insumo, comisión, envío variable).",
     example: "110",
     unitHint: "monto",
     commonMistake: "Meter costos fijos como renta o sueldos administrativos.",
   },
   avgticket: {
-    whatIsIt: "Monto promedio que compra cada cliente por transaccion.",
-    howToFill: "Calculalo con ventas del periodo dividido entre numero de compras.",
+    whatIsIt: "Monto promedio que compra cada cliente por transacción.",
+    howToFill: "Calcúlalo con ventas del periodo dividido entre número de compras.",
     example: "380",
     unitHint: "monto",
   },
   purchasefrequency: {
     whatIsIt: "Veces que un cliente promedio compra en un periodo.",
-    howToFill: "Usa historial real de recompra (por mes o por ano, pero se consistente).",
+    howToFill: "Usa historial real de recompra (por mes o por año, pero sé consistente).",
     example: "1.8",
     unitHint: "ratio",
     commonMistake: "Cambiar de periodo sin ajustar el resto de supuestos.",
@@ -590,23 +590,23 @@ const FIELD_GUIDE_BY_KEY: Record<string, FieldGuideTemplate> = {
     unitHint: "meses",
   },
   newcustomers: {
-    whatIsIt: "Numero de clientes nuevos del periodo.",
+    whatIsIt: "Número de clientes nuevos del periodo.",
     howToFill: "Cuenta solo clientes adquiridos en ese periodo, sin duplicados.",
     example: "45 clientes nuevos en marzo.",
     unitHint: "conteo",
     commonMistake: "Incluir clientes recurrentes como nuevos.",
   },
   ltv: {
-    whatIsIt: "Valor total que te deja un cliente durante su relacion con tu negocio.",
+    whatIsIt: "Valor total que te deja un cliente durante su relación con tu negocio.",
     howToFill:
-      "Si tienes historial confiable, usa tu LTV observado. Si no, estima con ticket, frecuencia y retencion.",
+      "Si tienes historial confiable, usa tu LTV observado. Si no, estima con ticket, frecuencia y retención.",
     example: "LTV estimado: 7200.",
     unitHint: "monto",
   },
   discountratepct: {
     whatIsIt: "Tasa para traer flujos futuros a valor presente.",
     howToFill:
-      "Usa una tasa anual conservadora (por defecto 11%) y ajustala segun riesgo del negocio.",
+      "Usa una tasa anual conservadora (por defecto 11%) y ajústala según riesgo del negocio.",
     example: "11",
     unitHint: "%",
     commonMistake: "Usar 0% y sobrevalorar resultados futuros.",
@@ -618,27 +618,27 @@ const FIELD_GUIDE_BY_KEY: Record<string, FieldGuideTemplate> = {
     unitHint: "%",
   },
   equityofferedpct: {
-    whatIsIt: "Porcentaje de participacion accionaria que cederias.",
+    whatIsIt: "Porcentaje de participación accionaria que cederías.",
     howToFill: "Ingresa el porcentaje ofrecido a inversionistas.",
     example: "12",
     unitHint: "%",
-    commonMistake: "Subestimar el impacto de ceder participacion en decisiones futuras.",
+    commonMistake: "Subestimar el impacto de ceder participación en decisiones futuras.",
   },
   controlscore: {
-    whatIsIt: "Puntaje de control que conservarias con la opcion elegida.",
+    whatIsIt: "Puntaje de control que conservarías con la opción elegida.",
     howToFill: "Califica de 0 a 100 (100 = control alto).",
     example: "80",
     unitHint: "conteo",
   },
   riskscore: {
-    whatIsIt: "Puntaje de riesgo de la opcion evaluada.",
+    whatIsIt: "Puntaje de riesgo de la opción evaluada.",
     howToFill: "Califica de 0 a 100 (100 = riesgo alto).",
     example: "55",
     unitHint: "conteo",
   },
   flexibilityscore: {
     whatIsIt: "Puntaje de flexibilidad para adaptarte a cambios.",
-    howToFill: "Califica de 0 a 100 segun posibilidad de renegociar o ajustar terminos.",
+    howToFill: "Califica de 0 a 100 según posibilidad de renegociar o ajustar términos.",
     example: "70",
     unitHint: "conteo",
   },
@@ -649,8 +649,8 @@ const FIELD_GUIDE_BY_KEY: Record<string, FieldGuideTemplate> = {
     unitHint: "%",
   },
   maxdebtpct: {
-    whatIsIt: "Limite maximo de deuda permitido en tu estrategia.",
-    howToFill: "Fija un tope prudente segun capacidad de pago.",
+    whatIsIt: "Límite máximo de deuda permitido en tu estrategia.",
+    howToFill: "Fija un tope prudente según capacidad de pago.",
     example: "40",
     unitHint: "%",
   },
@@ -662,25 +662,25 @@ const FIELD_GUIDE_BY_KEY: Record<string, FieldGuideTemplate> = {
   },
   impactpct: {
     whatIsIt: "Impacto financiero estimado si el riesgo ocurre.",
-    howToFill: "Define el porcentaje de afectacion esperado sobre ingresos o margen.",
+    howToFill: "Define el porcentaje de afectación esperado sobre ingresos o margen.",
     example: "25",
     unitHint: "%",
   },
   reservebalance: {
     whatIsIt: "Caja reservada hoy para emergencias.",
-    howToFill: "Ingresa solo recursos liquidos y realmente disponibles.",
+    howToFill: "Ingresa solo recursos líquidos y realmente disponibles.",
     example: "180000",
     unitHint: "monto",
   },
   monthlyfixedoutflow: {
-    whatIsIt: "Salidas fijas mensuales que debes cubrir aun en crisis.",
-    howToFill: "Suma nomina fija, renta, servicios y otros compromisos ineludibles.",
+    whatIsIt: "Salidas fijas mensuales que debes cubrir aún en crisis.",
+    howToFill: "Suma nómina fija, renta, servicios y otros compromisos ineludibles.",
     example: "95000",
     unitHint: "monto",
   },
   reservemonths: {
     whatIsIt: "Meses objetivo que quieres cubrir con tu fondo de emergencia.",
-    howToFill: "Define meta segun riesgo del negocio (comunmente 3 a 6 meses).",
+    howToFill: "Define meta según riesgo del negocio (comúnmente 3 a 6 meses).",
     example: "6",
     unitHint: "meses",
   },
@@ -691,37 +691,37 @@ const FIELD_GUIDE_BY_KEY: Record<string, FieldGuideTemplate> = {
     unitHint: "monto",
   },
   monthlyburn: {
-    whatIsIt: "Consumo mensual de caja de tu operacion.",
-    howToFill: "Ingresa cuanto efectivo neto pierdes al mes cuando hay quema.",
+    whatIsIt: "Consumo mensual de caja de tu operación.",
+    howToFill: "Ingresa cuánto efectivo neto pierdes al mes cuando hay quema.",
     example: "48000",
     unitHint: "monto",
   },
   availablecash: {
     whatIsIt: "Efectivo disponible para operar de inmediato.",
-    howToFill: "Incluye caja y bancos de libre disposicion.",
+    howToFill: "Incluye caja y bancos de libre disposición.",
     example: "320000",
     unitHint: "monto",
   },
   churnpct: {
     whatIsIt: "Porcentaje de clientes que se van en un periodo.",
-    howToFill: "Calculalo sobre la base de clientes activos del mismo periodo.",
+    howToFill: "Calcúlalo sobre la base de clientes activos del mismo periodo.",
     example: "4.5",
     unitHint: "%",
   },
   fxriskbufferpct: {
-    whatIsIt: "Colchon de precio para protegerte ante variaciones del tipo de cambio.",
-    howToFill: "Define un porcentaje prudente segun volatilidad historica de la moneda.",
+    whatIsIt: "Colchón de precio para protegerte ante variaciones del tipo de cambio.",
+    howToFill: "Define un porcentaje prudente según volatilidad histórica de la moneda.",
     example: "8",
     unitHint: "%",
   },
   annualebitda: {
-    whatIsIt: "EBITDA acumulado del ultimo ano.",
+    whatIsIt: "EBITDA acumulado del último año.",
     howToFill: "Usa el dato anual auditado o cierre confiable de 12 meses.",
     example: "2400000",
     unitHint: "monto",
   },
   terminalvalue: {
-    whatIsIt: "Valor residual esperado al final del horizonte de proyeccion.",
+    whatIsIt: "Valor residual esperado al final del horizonte de proyección.",
     howToFill: "Usa un supuesto conservador y consistente con crecimiento de largo plazo.",
     example: "3200000",
     unitHint: "monto",
@@ -796,26 +796,26 @@ function buildFieldGuideFromHeuristic(fieldKey: string, fieldLabel?: string): Fi
       howToFill: "Asigna un puntaje consistente (0 a 100) usando el mismo criterio entre opciones.",
       example: "72",
       unitHint: "conteo",
-      commonMistake: "Cambiar la escala entre una opcion y otra.",
+      commonMistake: "Cambiar la escala entre una opción y otra.",
     };
   }
 
   if (normalized.includes("month") || normalized.includes("year") || normalized.includes("period")) {
     return {
-      whatIsIt: `${title} como horizonte temporal del analisis.`,
-      howToFill: "Captura el numero real de meses o anos que quieres evaluar.",
+      whatIsIt: `${title} como horizonte temporal del análisis.`,
+      howToFill: "Captura el número real de meses o años que quieres evaluar.",
       example: "12",
       unitHint: "meses",
     };
   }
 
   return {
-    whatIsIt: `${title} dentro del calculo principal de esta herramienta.`,
+    whatIsIt: `${title} dentro del cálculo principal de esta herramienta.`,
     howToFill:
-      "Usa datos reales de operacion reciente o cierre contable del mismo periodo.",
+      "Usa datos reales de operación reciente o cierre contable del mismo periodo.",
     example: unitHint === "monto" ? "150000" : "Dato real del periodo",
     unitHint,
-    commonMistake: "Mezclar periodos distintos y distorsionar la interpretacion.",
+    commonMistake: "Mezclar periodos distintos y distorsionar la interpretación.",
   };
 }
 
@@ -875,10 +875,10 @@ function buildGenericGuide(
       },
       {
         id: `${toolId}-step-interpret`,
-        title: "Paso 3: Interpretacion y decision",
-        objective: "Interpreta resultados y define accion.",
+        title: "Paso 3: Interpretación y decisión",
+        objective: "Interpreta resultados y define acción.",
         fields: asGuides(step3.length > 0 ? step3 : resultKeys, fieldLabels),
-        completionRule: "Revisa al menos un resultado y define una accion.",
+        completionRule: "Revisa al menos un resultado y define una acción.",
       },
     ],
     results: resultKeys.map((resultKey) => ({
@@ -890,34 +890,34 @@ function buildGenericGuide(
 
 const RESULT_GUIDE_BY_KEY: Record<string, ResultGuideTemplate> = {
   margendecontribucion: {
-    meaning: "Cuanto dinero te deja cada venta para cubrir estructura y utilidad.",
-    healthyRange: "Mientras mas alto, mejor.",
+    meaning: "Cuánto dinero te deja cada venta para cubrir estructura y utilidad.",
+    healthyRange: "Mientras más alto, mejor.",
     nextAction: "Si es bajo, ajusta precio, costo variable o mezcla de producto.",
   },
   coca: {
     meaning: "Costo promedio para conseguir un cliente nuevo.",
     healthyRange: "Debe recuperar con margen en pocos meses.",
-    nextAction: "Si sube, mejora conversion comercial y canales de captacion.",
+    nextAction: "Si sube, mejora conversión comercial y canales de captación.",
   },
   ltv: {
-    meaning: "Valor economico que aporta un cliente durante su relacion contigo.",
-    nextAction: "Si es bajo, trabaja retencion, frecuencia y ticket promedio.",
+    meaning: "Valor económico que aporta un cliente durante su relación contigo.",
+    nextAction: "Si es bajo, trabaja retención, frecuencia y ticket promedio.",
   },
   uniteconomics: {
-    meaning: "Resultado unitario despues de restar el costo de adquirir cliente al margen de contribucion.",
-    warningRule: "Si es negativo, crecer mas solo acelera la perdida.",
-    nextAction: "Corrige precio, costo variable o adquisicion antes de escalar.",
+    meaning: "Resultado unitario después de restar el costo de adquirir cliente al margen de contribución.",
+    warningRule: "Si es negativo, crecer más solo acelera la pérdida.",
+    nextAction: "Corrige precio, costo variable o adquisición antes de escalar.",
   },
   ltvcoca: {
-    meaning: "Relacion entre valor generado por cliente y costo de adquisicion.",
+    meaning: "Relación entre valor generado por cliente y costo de adquisición.",
     healthyRange: ">= 3",
-    warningRule: "Menor a 1 indica perdida por adquisicion.",
-    nextAction: "No escales hasta mejorar margen, retencion o costo de captacion.",
+    warningRule: "Menor a 1 indica pérdida por adquisición.",
+    nextAction: "No escales hasta mejorar margen, retención o costo de captación.",
   },
   paybackmeses: {
     meaning: "Meses que tardas en recuperar lo invertido para adquirir cliente.",
     healthyRange: "Menor es mejor.",
-    nextAction: "Si es largo, reduce costo de adquisicion o sube margen por cliente.",
+    nextAction: "Si es largo, reduce costo de adquisición o sube margen por cliente.",
   },
   ratiodedeuda: {
     meaning: "Porcentaje de activos financiados con deuda.",
@@ -925,17 +925,17 @@ const RESULT_GUIDE_BY_KEY: Record<string, ResultGuideTemplate> = {
     nextAction: "Si sube demasiado, baja apalancamiento o fortalece capital propio.",
   },
   coberturadeintereses: {
-    meaning: "Cuantas veces tu operacion cubre el pago de intereses.",
+    meaning: "Cuántas veces tu operación cubre el pago de intereses.",
     healthyRange: "> 3",
     warningRule: "Si cae por debajo de 1, hay riesgo de incumplimiento.",
     nextAction: "Renegocia deuda, reduce costos o mejora utilidad operativa.",
   },
   margenneto: {
-    meaning: "Porcentaje final de utilidad despues de todos los costos y gastos.",
+    meaning: "Porcentaje final de utilidad después de todos los costos y gastos.",
     nextAction: "Si baja, revisa precio, eficiencia operativa y gastos no esenciales.",
   },
   margenbruto: {
-    meaning: "Porcentaje que queda despues de costos directos de venta.",
+    meaning: "Porcentaje que queda después de costos directos de venta.",
     nextAction: "Si se contrae, revisa costo unitario y estrategia de precio.",
   },
   margenoperativo: {
@@ -943,39 +943,39 @@ const RESULT_GUIDE_BY_KEY: Record<string, ResultGuideTemplate> = {
     nextAction: "Si cae, corrige gastos operativos y eficiencia del proceso.",
   },
   roi: {
-    meaning: "Retorno obtenido sobre la inversion realizada.",
+    meaning: "Retorno obtenido sobre la inversión realizada.",
     nextAction: "Prioriza iniciativas con mayor retorno ajustado por riesgo.",
   },
   van: {
-    meaning: "Valor actual neto de la inversion descontando costo de capital.",
+    meaning: "Valor actual neto de la inversión descontando costo de capital.",
     healthyRange: "> 0",
     nextAction: "Si es negativo, replantea monto, horizonte o beneficios esperados.",
   },
   npv: {
-    meaning: "Valor actual neto de la inversion descontando costo de capital.",
+    meaning: "Valor actual neto de la inversión descontando costo de capital.",
     healthyRange: "> 0",
     nextAction: "Si es negativo, replantea monto, horizonte o beneficios esperados.",
   },
   tir: {
     meaning: "Tasa interna de retorno del proyecto.",
-    nextAction: "Comparala contra tu tasa minima aceptable para decidir.",
+    nextAction: "Compárala contra tu tasa mínima aceptable para decidir.",
   },
   irr: {
     meaning: "Tasa interna de retorno del proyecto.",
-    nextAction: "Comparala contra tu tasa minima aceptable para decidir.",
+    nextAction: "Compárala contra tu tasa mínima aceptable para decidir.",
   },
   runwaymeses: {
-    meaning: "Meses de operacion que puedes sostener con la caja disponible.",
+    meaning: "Meses de operación que puedes sostener con la caja disponible.",
     healthyRange: ">= 6 meses",
     nextAction: "Si es bajo, activa plan de liquidez y ajuste de gasto.",
   },
   valordcf: {
     meaning: "Valor del negocio por flujos descontados.",
-    nextAction: "Usalo junto con otros metodos para definir un rango de valor.",
+    nextAction: "Úsalo junto con otros métodos para definir un rango de valor.",
   },
   vallibro: {
     meaning: "Valor contable neto (activos menos pasivos).",
-    nextAction: "Contrastalo con metodos por multiples y flujo para contexto completo.",
+    nextAction: "Contrástalo con métodos por múltiples y flujo para contexto completo.",
   },
   gap: {
     meaning: "Brecha entre valor actual y objetivo.",
@@ -989,7 +989,7 @@ function buildResultGuideFromHeuristic(resultKey: string): ResultGuideTemplate {
 
   if (normalized.includes("score") || normalized.includes("puntaje")) {
     return {
-      meaning: `${title} resume la evaluacion comparativa del escenario.`,
+      meaning: `${title} resume la evaluación comparativa del escenario.`,
       nextAction: "Prioriza acciones en la variable con menor puntaje.",
     };
   }
@@ -1016,8 +1016,8 @@ function buildResultGuideFromHeuristic(resultKey: string): ResultGuideTemplate {
     normalized.includes("delta")
   ) {
     return {
-      meaning: `${title} cuantifica el efecto economico del escenario evaluado.`,
-      nextAction: "Usa este dato para comparar alternativas y tomar una decision.",
+      meaning: `${title} cuantifica el efecto económico del escenario evaluado.`,
+      nextAction: "Usa este dato para comparar alternativas y tomar una decisión.",
     };
   }
 
@@ -1081,3 +1081,4 @@ export function getFieldGuide(spec: ToolGuideSpec, fieldKey: string): FieldGuide
 export function getResultGuide(spec: ToolGuideSpec, resultKey: string): ResultGuide | null {
   return spec.results.find((result) => result.resultKey === resultKey) ?? null;
 }
+

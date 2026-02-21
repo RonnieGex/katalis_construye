@@ -129,7 +129,7 @@ export default function LearnPage() {
           <div>
             <h1 className="section-title text-4xl text-black">Ruta guiada por capas</h1>
             <p className="mt-2 max-w-3xl text-neutral-700">
-              Aprende en orden: Base, Intermedia y Avanzada. Cada capitulo te lleva a una accion
+              Aprende en orden: Base, Intermedia y Avanzada. Cada capítulo te lleva a una acción
               concreta en herramientas.
             </p>
             <p className="mt-2 text-xs text-neutral-500">
@@ -138,7 +138,7 @@ export default function LearnPage() {
           </div>
           <InsightGlowCard
             title="Metodo Katalis Construye"
-            description="Aprende, aplica y valida. Cada paso busca construir criterio financiero util."
+            description="Aprende, aplica y valida. Cada paso busca construir criterio financiero útil."
           />
         </div>
       </section>
@@ -161,7 +161,7 @@ export default function LearnPage() {
               <p className="text-xs uppercase tracking-wide text-neutral-500">{layer.title}</p>
               <p className="mt-1 text-sm text-neutral-700">{layer.description}</p>
               <p className="mt-2 text-xs text-neutral-500">
-                {stats.completed}/{stats.total} capitulos ({stats.percent}%)
+                {stats.completed}/{stats.total} capítulos ({stats.percent}%)
               </p>
             </button>
           );
@@ -185,7 +185,7 @@ export default function LearnPage() {
                     href={`/chapter/${step.chapterSlug}`}
                     className="inline-flex text-sm font-medium text-black underline decoration-neutral-400 underline-offset-4"
                   >
-                    Leer capitulo
+                    Leer capítulo
                   </Link>
                 ) : null}
                 {step.toolLinks.length > 0 ? (

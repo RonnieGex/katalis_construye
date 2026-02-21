@@ -13,7 +13,7 @@ export default function ValuationCalculatorPage() {
     <AdvancedToolPage<ValuationModel>
       toolId="valuation-calculator"
       title="Calculadora de Valoracion"
-      description="Valora negocio por multiples (ventas/EBITDA/utilidad), valor libro y DCF."
+      description="Valora negocio por múltiples (ventas/EBITDA/utilidad), valor libro y DCF."
       exportPrefix="valuation-calculator"
       fields={[
         { key: "annualSales", label: "Ventas anuales", type: "number", step: "0.01" },
@@ -21,7 +21,7 @@ export default function ValuationCalculatorPage() {
         { key: "annualEbitda", label: "EBITDA anual", type: "number", step: "0.01" },
         { key: "ebitdaMultiple", label: "Multiple EBITDA", type: "number", step: "0.01" },
         { key: "annualNetIncome", label: "Utilidad neta anual", type: "number", step: "0.01" },
-        { key: "netIncomeMultiple", label: "Multiple utilidad neta", type: "number", step: "0.01" },
+        { key: "netIncomeMultiple", label: "Múltiple utilidad neta", type: "number", step: "0.01" },
         { key: "totalAssets", label: "Activos totales", type: "number", step: "0.01" },
         { key: "totalLiabilities", label: "Pasivos totales", type: "number", step: "0.01" },
         { key: "discountRatePct", label: "Tasa descuento (%)", type: "number", step: "0.01" },

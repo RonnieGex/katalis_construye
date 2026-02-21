@@ -17,14 +17,14 @@ export default function ProfitabilityAnalyzerPage() {
     <AdvancedToolPage<ProfitabilityModel>
       toolId="profitability-analyzer"
       title="Analizador de Rentabilidad"
-      description="Calcula margenes bruto/operativo/neto, ROI y rentabilidad por segmento."
+      description="Calcula márgenes bruto/operativo/neto, ROI y rentabilidad por segmento."
       exportPrefix="profitability-analyzer"
       fields={[
         { key: "sales", label: "Ventas", type: "number", step: "0.01" },
         { key: "cogs", label: "Costo de ventas", type: "number", step: "0.01" },
         { key: "opex", label: "Gastos operativos", type: "number", step: "0.01" },
         { key: "netIncome", label: "Utilidad neta", type: "number", step: "0.01" },
-        { key: "investment", label: "Inversion", type: "number", step: "0.01" },
+        { key: "investment", label: "Inversión", type: "number", step: "0.01" },
         { key: "segmentRevenue", label: "Ventas segmento", type: "number", step: "0.01" },
         { key: "segmentCosts", label: "Costos segmento", type: "number", step: "0.01" },
       ]}
