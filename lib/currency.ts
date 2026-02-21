@@ -1,13 +1,5 @@
 import type { AppSettings } from "@/lib/domain";
 
-export function toUsd(baseAmount: number, fxRateToUsd: number): number {
-  if (fxRateToUsd <= 0) {
-    return 0;
-  }
-
-  return baseAmount / fxRateToUsd;
-}
-
 export function formatCurrency(
   amount: number,
   currencyCode: string,
@@ -20,29 +12,16 @@ export function formatCurrency(
   }).format(amount);
 }
 
-function getDisplayCurrencyCode(settings: AppSettings): string {
-  return settings.currencyDisplayMode === "usd" ? "USD" : settings.baseCurrency.code;
-}
-
-function toDisplayAmount(amount: number, settings: AppSettings): number {
-  if (settings.currencyDisplayMode === "usd") {
-    return toUsd(amount, settings.fxRateToUsd);
-  }
-  return amount;
-}
-
 export function formatAmountByDisplayMode(
   amount: number,
   settings: AppSettings,
   locale = "es-MX",
 ): string {
-  const displayAmount = toDisplayAmount(amount, settings);
-  const currencyCode = getDisplayCurrencyCode(settings);
-  return formatCurrency(displayAmount, currencyCode, locale);
+  return formatCurrency(amount, settings.baseCurrency.code, locale);
 }
 
 export function getDisplayCurrencyLabel(settings: AppSettings): string {
-  return settings.currencyDisplayMode === "usd" ? "USD" : settings.baseCurrency.code;
+  return settings.baseCurrency.code;
 }
 
 // Legacy alias kept while remaining callers migrate.

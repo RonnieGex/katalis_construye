@@ -133,8 +133,7 @@ export default function LearnPage() {
               concreta en herramientas.
             </p>
             <p className="mt-2 text-xs text-neutral-500">
-              Moneda visible actual:{" "}
-              {settings.currencyDisplayMode === "usd" ? "USD" : settings.baseCurrency.code}
+              Moneda base actual: {settings.baseCurrency.code}
             </p>
           </div>
           <InsightGlowCard

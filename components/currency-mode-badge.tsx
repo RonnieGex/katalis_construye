@@ -8,7 +8,7 @@ interface CurrencyModeBadgeProps {
 export function CurrencyModeBadge({ settings }: CurrencyModeBadgeProps) {
  return (
  <p className="mt-2 text-xs text-neutral-500">
- Mostrando: <span className="font-medium text-neutral-800">{getDisplayCurrencyLabel(settings)}</span>
+ Moneda base: <span className="font-medium text-neutral-800">{getDisplayCurrencyLabel(settings)}</span>
  </p>
  );
 }

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { formatAmountByDisplayMode, toUsd } from "@/lib/currency";
+import { formatAmountByDisplayMode } from "@/lib/currency";
 import type { AppSettings } from "@/lib/domain";
 
 const baseSettings: AppSettings = {
@@ -12,29 +12,29 @@ const baseSettings: AppSettings = {
 };
 
 describe("currency display mode", () => {
-  it("formats amount in base currency when mode is base", () => {
+  it("formats amount in base currency", () => {
     const result = formatAmountByDisplayMode(2000, baseSettings);
     expect(result).toContain("$");
     expect(result).not.toContain("USD");
   });
 
-  it("formats amount in USD when mode is usd", () => {
+  it("ignores legacy usd mode and keeps base currency formatting", () => {
     const result = formatAmountByDisplayMode(2000, {
       ...baseSettings,
       currencyDisplayMode: "usd",
     });
-    expect(result).toContain("USD");
-    expect(toUsd(2000, 20)).toBe(100);
+    expect(result).toContain("$");
+    expect(result).not.toContain("USD");
   });
 
-  it("returns 0 USD conversion when fx rate is invalid", () => {
+  it("keeps base currency formatting even with invalid fx data", () => {
     const result = formatAmountByDisplayMode(2000, {
       ...baseSettings,
       currencyDisplayMode: "usd",
       fxRateToUsd: 0,
     });
 
-    expect(toUsd(2000, 0)).toBe(0);
-    expect(result).toContain("USD");
+    expect(result).toContain("$");
+    expect(result).not.toContain("USD");
   });
 });

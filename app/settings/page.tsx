@@ -22,14 +22,6 @@ const BUSINESS_MODEL_OPTIONS: Array<{ value: BusinessModel; label: string }> = [
  { value: "other", label: "Otro" },
 ];
 
-function parseNumber(value: string): number {
- const parsed = Number(value);
- if (Number.isFinite(parsed)) {
- return parsed;
- }
- return 0;
-}
-
 function applyBaseCurrency(settings: AppSettings, code: string): AppSettings {
  const resolved = resolveCurrencyFromCode(code);
  return {
@@ -92,10 +84,10 @@ export default function SettingsPage() {
  setSaving(true);
 
  try {
- if (settings.fxRateToUsd <= 0) {
- throw new Error("El tipo de cambio debe ser mayor que 0");
- }
- await saveSettings(settings);
+ await saveSettings({
+ ...settings,
+ currencyDisplayMode: "base",
+ });
  setMessage("Ajustes guardados");
  } catch (saveError) {
  setError(saveError instanceof Error ? saveError.message : "No se pudo guardar");
@@ -188,7 +180,7 @@ export default function SettingsPage() {
  <section className="panel-soft p-6">
  <h1 className="section-title text-4xl text-black">Ajustes</h1>
  <p className="mt-2 text-neutral-700">
- Moneda visible, tipo de cambio y operaciones de respaldo local.
+ Moneda base, modelo de negocio y operaciones de respaldo local.
  </p>
  </section>
 
@@ -218,37 +210,6 @@ export default function SettingsPage() {
  className="input-base"
  value={settings.baseCurrency.symbol}
  readOnly
- />
- </label>
-
- <label className="space-y-1 text-sm text-neutral-700">
- Moneda visible
- <select
- className="input-base"
- value={settings.currencyDisplayMode}
- onChange={(event) =>
- setSettings((prev) => ({
- ...prev,
- currencyDisplayMode: event.target.value === "usd" ? "usd" : "base",
- }))
- }
- >
- <option value="base">Moneda base</option>
- <option value="usd">USD</option>
- </select>
- </label>
-
- <label className="space-y-1 text-sm text-neutral-700">
- Tipo de cambio a USD
- <input
- className="input-base"
- type="number"
- min="0.0001"
- step="0.01"
- value={settings.fxRateToUsd}
- onChange={(event) =>
- setSettings((prev) => ({ ...prev, fxRateToUsd: parseNumber(event.target.value) }))
- }
  />
  </label>
 

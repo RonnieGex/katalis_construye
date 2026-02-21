@@ -394,7 +394,7 @@ export default function ToolsHomePage() {
           Cada herramienta está vinculada a los capítulos del libro y produce resultados que puedes exportar. Expande cualquier tarjeta para ver qué necesitas tener listo y qué obtendrás.
         </p>
         <p className="mt-2 text-xs text-neutral-500">
-          Moneda visible: {settings.currencyDisplayMode === "usd" ? "USD" : settings.baseCurrency.code}
+          Moneda base: {settings.baseCurrency.code}
         </p>
       </section>
 
