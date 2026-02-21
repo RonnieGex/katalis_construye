@@ -97,7 +97,7 @@ export default function RootLayout({
                         <Link href="/" className="flex items-center gap-1">
                             <BrandLogo size={40} className="h-10 w-10 object-cover" priority />
                             <span className="text-[var(--foreground)] text-xl font-bold tracking-tight whitespace-nowrap">Katalis</span>
-                            <div className="w-[110px] sm:w-[130px] flex items-center">
+                            <div className="w-[138px] sm:w-[150px] flex items-center">
                                 <FlipWords
                                     words={["Crea", "Construye", "Sueña"]}
                                     className="text-xl font-bold tracking-tight text-[var(--foreground)]"
