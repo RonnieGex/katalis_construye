@@ -83,6 +83,8 @@ export default function RootLayout({
     return (
         <html lang="es" suppressHydrationWarning>
             <head>
+                <link rel="icon" href="/brand/katalis-logo-64.png" sizes="64x64" type="image/png" />
+                <link rel="shortcut icon" href="/brand/katalis-logo-64.png" type="image/png" />
                 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet" />
             </head>
             <body suppressHydrationWarning className={`${lufga.variable} antialiased font-sans bg-[var(--background)] text-[var(--foreground)] min-h-screen flex flex-col`}>
