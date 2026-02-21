@@ -1,4 +1,4 @@
-﻿import { promises as fs } from "node:fs";
+import { promises as fs } from "node:fs";
 import path from "node:path";
 
 export interface ContentDocument {
@@ -10,13 +10,18 @@ export interface ContentDocument {
   sourcePath: string;
 }
 
-const CONTENT_ROOT = path.join(process.cwd(), "..", "elementos_estructurales");
+const CONTENT_ROOT_CANDIDATES = [
+  path.join(process.cwd(), "elementos_estructurales"),
+  path.join(process.cwd(), "..", "elementos_estructurales"),
+];
 
 const STRUCTURAL_FILES = [
   "prefacio_internacional.md",
   "indice_internacional.md",
   "glosario_internacional.md",
 ] as const;
+
+let resolvedContentRootPromise: Promise<string> | null = null;
 
 export async function getAllContentDocuments(): Promise<ContentDocument[]> {
   const [chapters, structural] = await Promise.all([
@@ -28,7 +33,8 @@ export async function getAllContentDocuments(): Promise<ContentDocument[]> {
 }
 
 export async function getChapterDocuments(): Promise<ContentDocument[]> {
-  const fileNames = await fs.readdir(CONTENT_ROOT);
+  const contentRoot = await resolveContentRoot();
+  const fileNames = await fs.readdir(contentRoot);
   const chapterFiles = fileNames
     .map((fileName) => {
       const match = /^capitulo(\d+)_internacional\.md$/i.exec(fileName);
@@ -46,11 +52,11 @@ export async function getChapterDocuments(): Promise<ContentDocument[]> {
 
   const docs = await Promise.all(
     chapterFiles.map(async ({ fileName, chapterNumber }) => {
-      const sourcePath = path.join(CONTENT_ROOT, fileName);
+      const sourcePath = path.join(contentRoot, fileName);
       const body = await fs.readFile(sourcePath, "utf8");
       return {
         slug: fileName.replace(/\.md$/i, ""),
-        title: getTitleFromMarkdown(body, `Capítulo ${chapterNumber}`),
+        title: getTitleFromMarkdown(body, `Capitulo ${chapterNumber}`),
         body,
         kind: "chapter" as const,
         chapterNumber,
@@ -63,9 +69,10 @@ export async function getChapterDocuments(): Promise<ContentDocument[]> {
 }
 
 export async function getStructuralDocuments(): Promise<ContentDocument[]> {
+  const contentRoot = await resolveContentRoot();
   const docs = await Promise.all(
     STRUCTURAL_FILES.map(async (fileName) => {
-      const sourcePath = path.join(CONTENT_ROOT, fileName);
+      const sourcePath = path.join(contentRoot, fileName);
       const body = await fs.readFile(sourcePath, "utf8");
       return {
         slug: fileName.replace(/\.md$/i, ""),
@@ -89,6 +96,29 @@ export async function getDocumentBySlug(slug: string): Promise<ContentDocument |
   return all.find((document) => document.slug === slug) ?? null;
 }
 
+async function resolveContentRoot(): Promise<string> {
+  if (!resolvedContentRootPromise) {
+    resolvedContentRootPromise = (async () => {
+      for (const candidate of CONTENT_ROOT_CANDIDATES) {
+        try {
+          const stats = await fs.stat(candidate);
+          if (stats.isDirectory()) {
+            return candidate;
+          }
+        } catch {
+          // try the next candidate
+        }
+      }
+
+      throw new Error(
+        `Content directory not found. Tried: ${CONTENT_ROOT_CANDIDATES.join(", ")}`,
+      );
+    })();
+  }
+
+  return resolvedContentRootPromise;
+}
+
 function getTitleFromMarkdown(markdown: string, fallback: string): string {
   const line = markdown
     .split(/\r?\n/)
@@ -105,24 +135,24 @@ function getTitleFromMarkdown(markdown: string, fallback: string): string {
 function createIntroductionDocument(): ContentDocument {
   return {
     slug: "introduccion_internacional",
-    title: "Introducción",
+    title: "Introduccion",
     kind: "structural",
     sourcePath: "virtual:introduccion",
     body: [
-      "# Introducción",
+      "# Introduccion",
       "",
       "Katalis Construye es un web book interactivo para desarrollar criterio financiero aplicable.",
       "",
-      "## Filosofía",
+      "## Filosofia",
       "",
       "- **Katalis**: impulsar decisiones que mueven tu negocio.",
-      "- **Construye**: formar criterio con práctica, no solo teoría.",
+      "- **Construye**: formar criterio con practica, no solo teoria.",
       "",
-      "## Cómo usarla",
+      "## Como usarla",
       "",
       "- Sigue la ruta en **Learn** para avanzar paso a paso.",
-      "- Usa **Tools** para aplicar conceptos con tus propios números.",
-      "- Revisa **Library** para estudiar cualquier capítulo en cualquier orden.",
+      "- Usa **Tools** para aplicar conceptos con tus propios numeros.",
+      "- Revisa **Library** para estudiar cualquier capitulo en cualquier orden.",
       "- Configura moneda y respaldo en **Settings**.",
     ].join("\n"),
   };

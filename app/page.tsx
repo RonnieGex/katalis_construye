@@ -55,9 +55,8 @@ export default function Home() {
             </Link>
           </div>
           <div className="mt-8">
-            <span className="inline-flex items-center gap-2 bg-[#171717] px-4 py-2 text-sm font-bold text-white">
-              <span className="material-symbols-outlined text-sm">lock</span>
-              Sin nube obligatoria. Tus datos, tu máquina.
+            <span className="inline-flex items-center border border-[var(--stroke)] bg-[var(--panel-soft)] px-4 py-2 text-sm font-semibold text-[#171717]">
+              Recurso gratuito y público para emprendedores.
             </span>
           </div>
         </div>
@@ -85,8 +84,9 @@ export default function Home() {
           return (
             <article
               key={step.title}
-              className={`hover-lift flex min-h-[320px] flex-col justify-between border border-neutral-200 p-8 transition-all duration-400 ease-out lg:p-10 ${isDark ? "bg-[#171717] text-white" : "bg-white text-[#171717]"
-                }`}
+              className={`hover-lift flex min-h-[320px] flex-col justify-between border border-neutral-200 p-8 transition-all duration-400 ease-out lg:p-10 ${
+                isDark ? "bg-[#171717] text-white" : "bg-white text-[#171717]"
+              }`}
             >
               <p className="text-5xl font-bold opacity-30">{String(index + 1).padStart(2, "0")}</p>
               <div className="mt-12">
@@ -121,4 +121,3 @@ export default function Home() {
     </div>
   );
 }
-
