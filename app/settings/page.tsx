@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
+import { CURRENCY_OPTIONS, resolveCurrencyFromCode } from "@/lib/currency-options";
 import type { AppSettings, BusinessModel } from "@/lib/domain";
 import { DEFAULT_SETTINGS } from "@/lib/defaults";
 import {
@@ -27,6 +28,17 @@ function parseNumber(value: string): number {
  return parsed;
  }
  return 0;
+}
+
+function applyBaseCurrency(settings: AppSettings, code: string): AppSettings {
+ const resolved = resolveCurrencyFromCode(code);
+ return {
+ ...settings,
+ baseCurrency: {
+ code: resolved.code,
+ symbol: resolved.symbol,
+ },
+ };
 }
 
 function createDownloadFile(content: string, filename: string): void {
@@ -184,31 +196,28 @@ export default function SettingsPage() {
  <h2 className="section-title text-2xl text-black">Preferencias globales</h2>
  <div className="mt-4 grid gap-4 md:grid-cols-2">
  <label className="space-y-1 text-sm text-neutral-700">
- Codigo moneda base (ISO)
- <input
- className="input-base uppercase"
+ Moneda base (ISO)
+ <select
+ className="input-base"
  value={settings.baseCurrency.code}
- maxLength={3}
  onChange={(event) =>
- setSettings((prev) => ({
- ...prev,
- baseCurrency: { ...prev.baseCurrency, code: event.target.value.toUpperCase() },
- }))
+ setSettings((prev) => applyBaseCurrency(prev, event.target.value))
  }
- />
+ >
+ {CURRENCY_OPTIONS.map((option) => (
+ <option key={option.code} value={option.code}>
+ {option.label}
+ </option>
+ ))}
+ </select>
  </label>
 
  <label className="space-y-1 text-sm text-neutral-700">
- Simbolo moneda base
+ Simbolo detectado
  <input
  className="input-base"
  value={settings.baseCurrency.symbol}
- onChange={(event) =>
- setSettings((prev) => ({
- ...prev,
- baseCurrency: { ...prev.baseCurrency, symbol: event.target.value },
- }))
- }
+ readOnly
  />
  </label>
 
