@@ -68,7 +68,8 @@ export default function Home() {
           <p className="text-lg leading-relaxed text-[var(--foreground)]/80">
             No es un curso. No es un manual. Es una plataforma que te acompaña
             mientras administras tu negocio real. Cada herramienta conecta con
-            lo que aprendes. Cada lectura tiene aplicación inmediata.
+            lo que aprendes. Cada lectura tiene aplicación inmediata. Todo este
+            contenido y sus herramientas están disponibles sin costo.
           </p>
           <p className="text-base leading-relaxed text-[var(--foreground)]/70">
             Hecha para fundadores, directores y dueños de empresa que necesitan
